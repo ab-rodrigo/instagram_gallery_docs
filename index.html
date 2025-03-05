@@ -7,676 +7,162 @@
 	<meta name="description" content="Instagram Gallery for Opencart 4.x">
 	<meta name="author" content="Rodrigo Barbosa">
 	<title>Instagram Gallery for Opencart 4.x</title>
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&amp;display=swap" rel="stylesheet">
-	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-	<style>
-		:root {
-			--header-height: 70px;
-			--nav-link-font-size: 0.8rem;
-			--main-font-size: 0.85rem;
-		}
-
-		body {
-			font-family: "Poppins", sans-serif;
-			-webkit-font-smoothing: antialiased;
-			overflow: hidden;
-		}
-
-		main {
-			font-size: var(--main-font-size) !important;
-		}
-
-		#col-aside {
-			left: 0;
-			font-size: var(--nav-link-font-size);
-		}
-
-		#col-main {
-			right: 0;
-		}
-
-		main.container {
-			margin: 0;
-		}
-
-		#col-aside,
-		#col-main {
-			position: absolute;
-			overflow-y: scroll;
-			top: var(--header-height);
-			height: calc(100vh - var(--header-height));
-			bottom: 0;
-		}
-
-		.nav>ul>li.nav-item>a.nav-link {
-			padding-left: 40px;
-		}
-
-		.nav>ul>div>li>a.nav-link,
-		.nav>ul>div>div>li>a.nav-link {
-			padding-left: 40px;
-		}
-
-		section {
-			padding-top: 20px;
-		}
-
-		.theme-icon-holder {
-			display: inline-block;
-			background: #f4fcf6;
-			width: 32px;
-			height: 32px;
-			padding-top: 4px;
-			font-size: 1rem;
-			text-align: center;
-			border-radius: 50%;
-			border: 1px solid var(--bs-gray);
-		}
-
-		.callout-block {
-			padding: 1rem 1.5rem;
-			border-left: 3px solid #5d6778;
-			background: #f5f5f5;
-			margin-top: 1rem;
-			margin-bottom: 1rem;
-		}
-
-		.callout-block code {
-			background: #fff;
-		}
-
-		.callout-block .callout-title {
-			font-size: 1rem;
-		}
-
-		.callout-block.callout-block-info {
-			border-color: #5b99ea;
-			background: #f9fbfe;
-		}
-
-		.callout-block.callout-block-info .callout-title {
-			color: #1c6fdc;
-		}
-
-		.callout-block.callout-block-success {
-			border-color: #5cb377;
-			background: #e7f4eb;
-		}
-
-		.callout-block.callout-block-success .callout-title {
-			color: #3e8554;
-		}
-
-		.callout-block.callout-block-warning {
-			border-color: #eebf41;
-			background: #fdf6e5;
-		}
-
-		.callout-block.callout-block-warning .callout-title {
-			color: #d09c13;
-		}
-
-		.callout-block.callout-block-danger {
-			border-color: #d26d69;
-			background: #fbf3f2;
-		}
-
-		.callout-block.callout-block-danger .callout-title {
-			color: #b73c37;
-		}
-
-		#download-btn-sm {
-			display: none;
-		}
-
-		@media (max-width: 576px) {
-			.navbar-brand {
-				font-size: 1rem !important;
-			}
-
-			#download-btn-lg {
-				display: none;
-			}
-
-			#download-btn-sm {
-				display: block;
-			}
-		}
-
-		@media (max-width: 392px) {
-			#download-btn-sm {
-				display: none;
-			}
-		}
-		#div-update-msg {
-			font-weight: bold;
-			height: 25px;
-			font-size: medium;
-		}
-		.normal_link {
-			color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
-		}
-	</style>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" integrity="sha384-He3RckdFB2wffiHOcESa3sf4Ida+ni/fw9SSzAcfY2EPnU1zkK/sLUzw2C5Tyuhj" crossorigin="anonymous">
 </head>
+<style>
+	:root {
+		--nav-height: 72px;
+		--footer-height: 72px;
+	}
+
+	.container,
+	.row,
+	.col {
+		overflow: hidden;
+		max-width: unset;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.image-size {
+		min-width: 330px;
+		width: 60vw;
+		max-width: 660px;
+	}
+
+	.btn-doc {
+		width: 100%;
+	}
+
+	.background {
+		background: url('assets/images/bg-img.png') no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		position: fixed;
+		top: 0;
+		left: 0;
+		min-width: 100%;
+		min-height: 100%;
+		z-index: -1;
+	}
+
+	h1,
+	p,
+	a {
+		text-wrap: balance;
+	}
+
+	nav {
+		height: var(--nav-height);
+	}
+
+	main {
+		min-height: calc(100vh - var(--nav-height) - var(--footer-height));
+	}
+
+	footer {
+		height: var(--nav-height);
+	}
+</style>
 
 <body>
-	<div class="container">
-		<div class="row">
-			<nav class="nnavbar navbar-expand-lg navbar-light bg-light fixed-top d-flex flex-column p-0" aria-label="Instagram Gallery for Opencart 4.x">
-				<div class="col-12 bg-danger text-white d-flex align-items-center justify-content-center" id="div-update-msg">
-					Atualizado - 2025
-				</div>
-				<div class="container-fluid d-flex justify-content-between py-1">
-					<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="padding: 6px 13px;font-size: 1.2rem;border: 1px solid rgb(0,0,0,0.15);border-radius: 0.375rem;color: rgb(0,0,0,0.5);">
-						<i class="fa-solid fa-bars"></i>
-					</button>
-					<a class="navbar-brand ms-3 mt-2" href="#"><strong>Instagram Gallery</strong> | Opencart 4.x</a>
-					<a class="btn btn-success" id="download-btn-lg" target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button">Download</a>
-					<a class="btn btn-success btn-sm" id="download-btn-sm" target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button"><i class="fa-solid fa-download"></i></a>
-				</div>
-			</nav>
-
-			<aside class="col-lg-3 col-xl-3 col-xxl-2 sidebar" id="col-aside">
-				<div class="offcanvas-lg offcanvas-start aside-offcanvas" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-					<div class="offcanvas-header">
-						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Fechar"></button>
+	<div class="background position-fixed"></div>
+	<div id="lng-pt" style="display: none;">
+		<div class="col-12 bg-danger text-white d-flex align-items-center justify-content-center fw-bolder">Atualizado - 2025</div>
+		<nav class="navbar navbar-expand-md navbar-dark px-5 py-3 justify-content-between">
+			<a class="navbar-brand fw-bolder text-wrap d-none d-sm-block" href="#">Instagram Gallery para Opencart</a>
+			<a class="navbar-brand fw-bolder text-wrap d-block d-sm-none" href="#">Instagram Gallery<br>para Opencart</a>
+			<a href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" class="btn btn-danger" target="_blank">Download</a>
+		</nav>
+		<main role="main" class="container">
+			<div class="text-center text-white">
+				<h1 class="fw-bolder fs-1">Sua imagens do <br>Instagram para o Opencart</h1>
+				<p class="fw-bolder fs-4">Aprimore a experiência visual do seu e-commerce<br> com galerias de imagens baseadas nas suas postagens.</p>
+				<p class="fw-bolder fs-4">Acesse a documentação e saiba mais.</p>
+				<div class="container flex-column">
+					<div class="row">
+						<div class="col-md-6 col-sm-12 pb-3 align-middle">
+							<a href="pt-br/index.html" class="btn btn-outline-light btn-doc px-5 py-2 d-flex flex-row justify-content-center rounded-pill">
+								<img src="https://flagcdn.com/br.svg" width="40" alt="Brasil">
+								<span class="fw-bolder ps-2">Português</span>
+							</a>
+						</div>
+						<div class="col-md-6 col-sm-12 pb-3">
+							<a href="en-us/index.html" class="btn btn-outline-light btn-doc px-5 py-2 d-flex flex-row justify-content-center rounded-pill">
+								<img src="https://flagcdn.com/us.svg" width="40" alt="Brasil">
+								<span class="fw-bolder ps-2">Inglês</span>
+							</a>
+						</div>
 					</div>
-					<div class="offcanvas-body">
-						<nav id="nav" class="nav navbar">
-							<ul class="section-items list-unstyled nav flex-column pb-3">
-								<li class="nav-item section-title collapsed">
-									<a class="nav-link scrollto offcanvas-dismiss" href="#section-welcome"><span class="theme-icon-holder me-2"><i class="fa fa-home"></i></span>Bem-vindo</a>
-								</li>
-								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#about-collapse"><a class="nav-link scrollto" href="#section-about"><span class="theme-icon-holder me-2"><i class="fa fa-info"></i></span>Sobre a extensão</a></li>
-								<div id="about-collapse" class="collapse">
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-about-overview">Visão geral</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-about-features">Recursos</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-about-requirements">Requisitos</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-about-support">Suporte</a></li>
-								</div>
-								<li class="nav-item section-title collapsed">
-									<a class="nav-link scrollto offcanvas-dismiss" href="#section-installation"><span class="theme-icon-holder me-2"><i class="fa-solid fa-upload"></i></span>Instalação</a>
-								</li>
-								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#gallery-collapse"><a class="nav-link scrollto" href="#section-gallery"><span class="theme-icon-holder me-2"><i class="fa-solid fa-image"></i></span>Galerias</a></li>
-								<div id="gallery-collapse" class="collapse">
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-gallery-types">Tipos de galerias</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-gallery-create">Criando galerias</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-gallery-configuration">Configuração</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-gallery-layout">Exibindo a galeria</a></li>
-								</div>
 
-								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#checkout-collapse"><a class="nav-link scrollto" href="#section-api"><span class="theme-icon-holder me-2"><i class="fa fa-gear"></i></span>API</a></li>
-								<div id="checkout-collapse" class="collapse">
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-api-facebook-account">Conta Facebook/Instagram</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-api-create-app">Criando aplicativo</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-api-app-configuration">Configurando o aplicativo</a></li>
-								</div>
-							</ul>
-						</nav>
+					<div class="row">
+						<div class="col-12 pt-3">
+							<img class="image-size img-fluid" src="assets/images/devices.png" alt="">
+						</div>
 					</div>
 				</div>
-			</aside>
-			<div class="col-lg-9 col-xl-9 col-xxl-10" id="col-main">
-				<main role="main" class="container-lg mt-2">
-					<article class="article px-0 py-4" id="section-welcome">
-						<header class="header">
-							<h1 class="heading">Bem-vindo</h1>
-							<p>Este manual tem como objetivo guiar o usuário em todas as etapas do processo de instalação, integração, configuração e uso do módulo.</p>
-						</header>
-					</article>
-					<article class="article px-0 py-4" id="section-about">
-						<header class="header">
-							<h1 class="heading">Sobre a extensão</h1>
-						</header>
-						<ol>
-							<li><a class="nav-link offcanvas-dismiss normal_link" href="#item-about-overview">Visão geral</a></li>
-							<li><a class="nav-link offcanvas-dismiss normal_link" href="#item-about-features">Recursos</a></li>
-							<li><a class="nav-link offcanvas-dismiss normal_link" href="#item-about-requirements">Requisitos</a></li>
-							<li><a class="nav-link offcanvas-dismiss normal_link" href="#item-about-support">Suporte</a></li>
-						</ol>
-						<section class="section" id="item-about-overview">
-							<h2 class="section-heading">Visão geral</h2>
-							<p>Aprimore a experiência visual do seu e-commerce com galerias de imagens baseadas nas suas postagens do Instagram. Adicione efeitos e legendas para dar um toque especial. Utilize o recurso de hashtag para filtrar suas mídias de maneira eficiente. Crie diferentes galerias para diversos layouts, cada uma com configurações personalizadas. Garanta a atualização automática das imagens para manter seu conteúdo sempre atual e relevante.</p>
-							<div class="col-md-6 col-sm-12">
-								<img class="figure-img img-fluid shadow rounded" src="assets/images/docs-example.png" alt="" title="Exemplo" />
-							</div>
-						</section>
-						<section class="section" id="item-about-features">
-							<h2 class="section-heading">Recursos</h2>
-							<ul>
-								<li class="pb-0">3 tipos de visualição.</li>
-								<li class="pb-0">Multiplas galerias com configurações distintas utilizando a mesma API.</li>
-								<li class="pb-0">Título para cada galeria.</li>
-								<li class="pb-0">Filtro por #hashtag.</li>
-								<li class="pb-0">Legendas.</li>
-								<li class="pb-0">Paginação.</li>
-								<li class="pb-0">Efeitos de imagem.</li>
-								<li class="pb-0">Link para o post no Instagram.</li>
-								<li class="pb-0">Disponível em português e inglês.</li>
-							</ul>
-						</section>
-						<section class="section" id="item-about-requirements">
-							<h2 class="section-heading">Requisitos</h2>
-							<ul>
-								<li class="pb-0">Opencart 4.x com certificado SSL (obrigatório para a integração com API do Instagram).</li>
-								<li class="pb-0">Download da extensão na versão correspondente à sua instalação do Opencart.</li>
-								<li class="pb-0">Conta de desenvolvedor Meta Facebook. <a target="_blank" href="https://developers.facebook.com/">Acesse o Painel de Desenvolvedor do Facebook.</a></li>
-								<li class="pb-0">Conta empresarial no Instagram. <a target="_blank" href="https://help.instagram.com/502981923235522/?helpref=uf_share">Como configurar uma conta empresarial no Instagram</a></li>
-								<li class="pb-0">Permissões de acesso e modificaçãono Opencart:
-									<ul>
-										<li class="pb-0">Painel > Extensões > Instalador.</li>
-										<li class="pb-0">Painel > Extensões > Extensões</li>
-										<li class="pb-0">Painel > Extensões > Modificações</li>
-										<li class="pb-0">Painel > Design > Layout</li>
-									</ul>
-								</li>
-							</ul>
-						</section>
-						<section class="section" id="item-about-support">
-							<h2 class="section-heading">Suporte</h2>
-							<h5 class="my-3">Suporte da extensão</h5>
-							<p>Acesse a <a target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr">página da extensão</a> e clique em <strong>Get Support</strong>.</p>
-						</section>
-					</article>
-					
-					<article class="article px-0 py-4 border-top" id="section-installation">
-						<header class="header">
-							<h1 class="heading">Instalação</h1>
-							<ol>
-								<li class="pb-0">Faça download da extensão na <a target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr">página
-										oficial</a> e salve o arquivo em um local conhecido.</li> 
-								<li class="pb-0">
-									A partir do <strong>Painel de Controle</strong>, acesse <strong>Extensões &gt; Instalador</strong> e clique em <strong>Upload</strong> <span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-upload"></i></span>
-								</li>
-								<li class="pb-0">
-									<p>Localize o arquivo, selecione-o e clique em <strong>Abrir</strong> ou dê um duplo clique no nome do arquivo.</p>
-									<p>Aguarde a instalação ser concluída. A extensão será listada na tabela de <strong>Extensões instaladas</strong>.</p>
-									<div class="col-md-6 col-sm-12">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/docs-installation-extension-list.png" alt="" title="Extensões instaladas" />
-									</div>
-								</li>
-								<li class="pb-0">Clique em <strong>Instalar</strong> <span class="border rounded ms-1" style="border-color: #3c933c;color: #fff;background-color: #4cb64c;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-plus-circle"></i></span></li>
-								<li class="pb-0">
-									<p>A partir do painel de controle do Opencart acesse as configurações do módulo em <strong>Extensões &gt; Extensões</strong>, selecione <strong>Módulos</strong> em Tipo de extensão, localize a galeria criada anteriormente e clique em <strong>Editar</strong>
-									</strong><span class="border rounded ms-1" style="border-color: #3c933c;color: #fff;background-color: #4cb64c;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-plus-circle"></i></span></span>.
-									<div class="col-md-6 col-sm-12">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/docs-installation-module-extensions-list.png" alt="" title="Lista de Módulos instalados" />
-									</div>
-								</li>
-							</ol>
-						</header>
-
-					</article>
-					
-					<article class="article px-0 py-4 border-top" id="section-gallery">
-						<header class="header">
-							<h1 class="heading">Galerias</h1>
-						</header>
-						<ol>
-							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-gallery-types">Tipos de galerias</a></li>
-							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-gallery-create">Criando galerias</a></li>
-							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-gallery-configuration">Configuração</a></li>
-							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-gallery-layout">Exibindo a galeria</a></li>
-						</ol>
-						<section class="section">
-
-							<section class="section" id="item-gallery-types">
-								<h2 class="section-heading">Tipos de galerias</h2>
-								<p>Existem duas maneiras de criar uma galeria:</p>
-								<ol>
-									<li>
-										<strong>Galeria Pai</strong>:
-										<p>Essa galeria será dedicada à configuração da API do Instagram. É possível criar várias Galerias Principais, cada uma com uma configuração de API distinta.</p>
-									</li>
-									<li>
-										<strong>Galeria Filho</strong>:
-										<p>Este tipo de galeria utilizará as configurações de API da Galeria Pai. É possível criar várias deste tipo para cada Galeria Pai.</p>
-									</li>
-								</ol>
-							</section>
-
-							<section class="section" id="item-gallery-create">
-								<h2 class="section-heading">Criando galerias</h2> 
-								<p>Clique em <strong>Extensões &gt; Extensões</strong> a partir do <strong>Painel de Controle</strong>, 
-									selecione <strong>Módulos</strong> em Tipo de extensão, encontre <strong>Instagram Gallery</strong> 
-									e clique em <strong>Editar</strong>
-								</strong>
-								<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-pencil"></i></span>
-								ou <strong>Novo</strong>
-								<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-circle-plus"></i>
-								</p>
-								<div class="col-md-6 col-sm-12">
-									<img class="figure-img img-fluid shadow rounded" src="assets/images/docs-installation-module-extensions-list.png" alt="" title="Lista de Módulos instalados" />
-								</div>
-
-								<h4 class="my-3">Criando uma Galeria Pai</h4>
-								Digite o nome da nova galeria e clique no botão Salvar.
-								<div class="col-md-6 col-sm-12">
-									<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-create-gallery-main-pt-br.png" alt="" title="Criando galeria pai" />
-								</div>
-
-								<h4 class="my-3">Criando uma Galeria Filho</h4>
-								Digite o nome da nova galeria, selecione a galeria pai e clique no botão Salvar.
-								<div class="col-md-6 col-sm-12">
-									<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-create-gallery-child-pt-br.png" alt="" title="Criando galeria pai" />
-								</div>
-								<div class="callout-block callout-block-info">
-									<div class="content">
-										<h4 class="callout-title">
-											<span class="callout-icon-holder me-1">
-												<i class="fas fa-info-circle"></i>
-											</span>
-											Nota
-										</h4>
-										<p>Obrigatório que haja ao menos uma galeria pai com API configurada e funcionando para criar galerias filhos.</p>
-									</div>
-								</div>
-							</section> 
-
-							<section class="section" id="item-gallery-configuration">
-								<h2 class="section-heading">Configuração</h2>
-								<h4 class="my-3">Configurações gerais</h4>
-								<div class="col-md-6 col-sm-12">
-									<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-general-tab-pt-br.png" alt="" title="Aba geral" />
-								</div>
-								<table class="table table-responsive table-bordered table-striped mb-2">
-									<tbody>
-										<thead>
-											<tr>
-												<th scope="col">Parâmetro</th>
-												<th scope="col" colspan="2">Descrição</th>
-											</tr>
-										</thead>
-										<tr>
-											<td>Nome</td>
-											<td>Nome da galeria. Pode ser alterado a qualquer momento. Não permite duplicidade.</td>
-										</tr>
-										<tr>
-											<td>Título</td>
-											<td>Título a ser exibido acima da galeria. Suporta HTML e CSS.</td>
-										</tr>
-										<tr>
-											<td>Tipos de postagens</td>
-											<td>Tipos de postagens que fornecerão mídia para a galeria.</td>
-										</tr>
-										<tr>
-											<td>Tipo de mídia do álbum</td>
-											<td>Tipos de mídia que serão buscadas dentro dos álbuns.</td>
-										</tr>
-										<tr>
-											<td>Imagens do álbum</td>
-											<td>Quantidade de mídia a ser buscada dentro dos álbuns.</td>
-										</tr>
-										<tr>
-											<td>Atualização</td>
-											<td>Período de atualização.</td>
-										</tr>
-										<tr>
-											<td>Hashtag</td>
-											<td>Utilizado para filtrar as postagens que fornecerão mídias. Somente as postagens que possuírem a hashtag serão processadas pelo módulo. Postagens sem a hashtag serão ignoradas.</td>
-										</tr>
-										<tr>
-											<td>Status</td>
-											<td>Habilita o módulo.</td>
-										</tr>
-									</tbody>
-								</table>
-	
-								<h4 class="my-3">Configurações de visualição</h4>
-								<div class="col-md-6 col-sm-12">
-									<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-view-tab-pt-br.png" alt="" title="Aba visualização" />
-								</div>
-								<table class="table table-responsive table-bordered table-striped mb-2">
-									<tbody>
-										<thead>
-											<tr>
-												<th scope="col">Parâmetro</th>
-												<th scope="col" colspan="2">Descrição</th>
-											</tr>
-										</thead>
-										<tr>
-											<td>Mídia por visualização</td>
-											<td>Quantidade de imagens que serão exibidas.</td>
-										</tr>
-										<tr>
-											<td>Tipo de visualização</td>
-											<td>Estilo da galeria.</td>
-										</tr>
-										<tr>
-											<td>Paginação</td>
-											<td>Exibe marcas de paginação.</td>
-										</tr>
-										<tr>
-											<td>Efeito de zoom</td>
-											<td>Escolha o efeito de zoom que será aplicado à imagem quando o usuário passar o mouse sobre ela.</td>
-										</tr>
-										<tr>
-											<td>Bordas arredondadas</td>
-											<td>Adicione bordas arredondadas às imagens.</td>
-										</tr>
-										<tr>
-											<td>Inclinação</td>
-											<td>Adicione efeito de inclinação às imagens.</td>
-										</tr>
-										<tr>
-											<td>Efeito de cor</td>
-											<td>Escolha o tipo de efeito de cor que será aplicado à imagem quando o usuário passar o mouse sobre ela.</td>
-										</tr>
-										<tr>
-											<td>Legenda</td>
-											<td>Exibir parte da legenda da postagem.</td>
-										</tr>
-										<tr>
-											<td>Link para postagem original</td>
-											<td>Transforme cada imagem em um link que aponta para a postagem correspondente no Instagram.</td>
-										</tr>
-										<tr>
-											<td>Dispositivos móveis</td>
-											<td>Habilita a exibição da galeria em dispositivos móveis com telas pequenas (menores que 576px).</td>
-										</tr>
-									</tbody>
-								</table>
-							</section>
-
-							<section class="section" id="item-gallery-layout">
-								<h2 class="section-heading">Exibindo a galeria</h2>
-								<ol>
-									<li>
-										No Painel de controle acesse <strong>Design</strong> > <strong>Layouts</strong>, escolha o layout que deseja exibir a galeria e clique em <strong>Editar</strong>
-										<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-pencil"></i></span>.
-									</li>
-									<li>
-										Na posição escolhida clique em <strong>Adicionar módulo</strong>
-										<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-plus-circle"></i></span>.
-									</li>
-									<li>
-										Selecione a galeria no item Instagram Gallery e clique em <strong>Salvar</strong>
-										<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-floppy-disk"></i></span>.
-									</li>
-								</ol>
-
-							</section>
-
-
-
-						</section>
-					</article>
-
-					<article class="article px-0 py-4 border-top" id="section-api">
-						<header class="header">
-							<h1 class="heading">Configuração da API</h1>
-						</header>
-						<ol>
-							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-facebook-account">Conta Facebook/Instagram</a></li>
-							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-create-app">Criando aplicativo</a></li>
-							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-app-configuration">Configurando o aplicativo</a></li>
-						</ol>
-	
-						<section class="section" id="item-api-facebook-account">
-							<h2 class="my-3">Contas Facebook Developers / Instagram Business</h2>
-							<div class="callout-block callout-block-success">
-								<div class="content">
-									<h4 class="callout-title">
-										<span class="callout-icon-holder me-1">
-											<i class="fas fa-thumbs-up"></i>
-										</span>
-										Contas Facebook Developers / Instagram Business
-									</h4>
-									<p class="mb-0">Antes de iniciar:
-										<ol>
-											<li>Certifique-se de que você já possui uma <a target="_blank" href="https://developers.facebook.com/">Conta de Desenvolvedor do Facebook</a> e verifique se a loja não está em modo de manutenção.</li>
-											<li>Certifique-se de que a conta do Instagram que fornecerá as imagens seja do tipo empresarial. <a target="_blank" href="https://help.instagram.com/502981923235522/?helpref=uf_share">Como configurar uma conta empresarial no Instagram</a></li>
-										</ol> 
-										
-									</p>
-								</div>
-							</div>
-						</section>
-
-
-						<section class="section" id="item-api-create-app">
-							<h2 class="my-3">Criando aplicação</h2>
-							<ol>
-								<li>
-									Acesse sua <a target="_blank" href="https://developers.facebook.com/">Conta de Desenvolvedor do Facebook</a>, clique em <strong>Meus apps.</strong>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-create-app-step-1-pt-br.png" alt="" title="Meus apps" />
-									</div>
-								</li>
-								<li>
-									Clique em Criar aplicativo.
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-create-app-step-2-pt-br.png" alt="" title="Criar aplicativo" />
-									</div>
-								</li>
-								<li>
-									Entre com o nome do aplicativo e clique em <strong>Avançar</strong>.
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-create-app-step-3-pt-br.png" alt="" title="Nome do aplicativo" />
-									</div>
-								</li>
-								<li>
-									Selecione a opção <strong>Outro</strong> e clique em <strong>Avançar</strong>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-create-app-step-4-pt-br.png" alt="" title="Caso de uso" />
-									</div>
-								</li>
-								<li>
-									Selecione a opção <strong>Empresa</strong> e clique em <strong>Avançar</strong>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-create-app-step-5-pt-br.png" alt="" title="Nome do aplicativo" />
-									</div> 
-								</li>
-								<li>
-									Revise as informações e clique em <strong>Criar aplicativo</strong>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-create-app-step-6-pt-br.png" alt="" title="Nome do aplicativo" />
-									</div> 
-								</li>
-							</ol>
-						</section>
-
-						<section class="section" id="item-api-app-configuration">
-							<h2 class="my-3">Configurando o aplicativo</h2>
-							<ol>
-								<li>
-									<p>Vá em <strong>Adicionar produto</strong> no painel do aplicativo. Procure por <strong>Instagram</strong> e clique em <strong>Configurar</strong>.</p>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-config-app-step-1-pt-br.png" alt="" title="Adicionando produto" />
-									</div>
-								</li>
-								<li>
-									<p>No menu lateral acesse <strong>Funções do app</strong> &gt; <strong>Funções</strong>, botão <strong>Adicionar pessoas</strong>.</p>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-config-app-step-2-pt-br.png" alt="" title="Adicionar pessoas" />
-									</div> 
-								</li>
-								<li>
-									<p>Marque a opção <strong>Testador do Instagram</strong>. Adicione a conta que fornecerá as mídias e clique em <strong>Avançar</strong>.</p>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-config-app-step-3-pt-br.png" alt="" title="Adicionar conta Instagram" />
-									</div> 
-								</li>
-								<li>
-									<p></p>No navegador, faça login na conta do Instagram informada no passo anterior, 
-									acesse <strong>Mais</strong> &gt; <strong>Configurações</strong> &gt; <strong>Permissões do site</strong> &gt; <strong>Apps e sites</strong>.</p>
-									<p>Na guia <strong>Convites Do Testador</strong>, clique em <strong>Aceitar</strong></p>									
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-config-app-step-4-pt-br.png" alt="" title="Convite de testador" />
-									</div> 
-								</li>
-								<li>
-									<p>Acesse as configurações do módulo em <strong>Extensões &gt; Extensões</strong> a partir do <strong>Painel de Controle</strong>, 
-										selecione <strong>Módulos</strong> em Tipo de extensão, localize a galeria criada anteriomente e clique em <strong>Editar</strong>.
-										<span class="border rounded ms-1" style="border-color:#1e91cf !important;color: #1e91cf;background-color: #fff;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-pencil"></i></span>
-										<p>Na aba <strong>API</strong>, copie a <strong>URL da loja</strong>.</p>
-										<div class="col-md-6 col-sm-12 mb-3">
-											<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-config-app-step-5-pt-br.png" alt="" title="Copiar URL da loja" />
-										</div>
-								</li>
-								<li>
-										<p>Retorne ao painel do aplicativo, no menu à esquerda acesse <strong>Instagram</strong> &gt; <strong>Configurações da API com login do Instagram</strong>, localize o item <strong>Configure o login da empresa no Instagram</strong> e clique em <strong>Configurar</strong>.</p>
-										<p>Cole a <strong>URL da loja</strong> e clique em <strong>Salvar</strong></p>
-										<div class="col-md-6 col-sm-12 mb-3">
-											<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-config-app-step-6-pt-br.png" alt="" title="Colar URL da loja" />
-										</div> 
-								</li>
-								<li>
-									<p>Ainda no painel do aplicativo, copie a <strong>ID do app do Instagram</strong> e <strong>Chave secreta do app do Instagram</strong>.</p>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-config-app-step-7-pt-br.png" alt="" title="Copiar id" />
-									</div> 
-								</li>
-								<li>
-									<p>Retore às configurações do módulo, na aba <strong>API</strong>, cole a <strong>ID do app do Instagram</strong> e <strong>Chave secreta do app do Instagram</strong> nos campos correspondentes. Clique no botão <strong>Obter autorização</strong></p>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-config-app-step-8-pt-br.png" alt="" title="Colar id" />
-									</div>  
-								</li>
-								<li>
-									<p>Será aberto um popup solicitando autorização, clique em <strong>Permitir</strong>. Caso não esteja logado no <strong>Instagram</strong>, será necessário inserir seu login e senha antes de prosseguir com a autorização.</p>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-config-app-step-9-pt-br.png" alt="" title="Autorização no Instagram" />
-									</div>  
-								</li>
-								<li>
-									<p>Uma tela de confirmação será exibida ao final. Retorne às configurações do módulo e verifique o <strong>Status da API</strong>. Se necessário, atualize a tela.</p>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="assets/images/pt/docs-config-app-step-10-pt-br.png" alt="" title="Status da integração" />
-									</div>  
-								</li>
-							</ol> 
- 						</section>
-
-
-					</article>
-				</main>
-				<footer class="footer">
-					<div class="container text-center pt-5">
-						<small class="copyright">Copyright <i class="fa-regular fa-copyright"></i>
-							<script>document.write(new Date().getFullYear());</script> -
-							<a class="theme-link" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" target="_blank">Instagram Gallery Extension for Opencart</a>
-						</small>
-					</div>
-					<div class="d-flex justify-content-center">
-						<script> if (document.lastModified) {
-								document.write('<span class="pb-1" style="font-size: 0.7rem;" >Última atualização: ' + document.lastModified + '</span>');
-							}
-						</script>
-					</div>
-				</footer>
 			</div>
-		</div>
+		</main>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-	<script>
-		$(".offcanvas-dismiss").click(function(){
-			$('.aside-offcanvas').offcanvas('hide');
-		});
-	</script>
+
+	<div id="lng-en" style="display: none;">
+		<div class="col-12 bg-danger text-white d-flex align-items-center justify-content-center fw-bolder">Update - 2025</div>
+		<nav class="navbar navbar-expand-md navbar-dark px-5 py-3 justify-content-between">
+			<a class="navbar-brand fw-bolder text-wrap d-none d-sm-block" href="#">Instagram Gallery for Opencart</a>
+			<a class="navbar-brand fw-bolder text-wrap d-block d-sm-none" href="#">Instagram Gallery<br>for Opencart</a>
+			<a href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" class="btn btn-danger" target="_blank">Download</a>
+		</nav>
+		<main role="main" class="container">
+			<div class="text-center text-white">
+				<h1 class="fw-bolder fs-1">Your Instagram images <br> to Opencart</h1>
+				<p class="fw-bolder fs-4">Enhance the visual experience of your e-commerce<br> with image galleries based on your posts.</p>
+				<p class="fw-bolder fs-4">Access the documentation and learn more.</p>
+				<div class="container flex-column">
+					<div class="row">
+						<div class="col-md-6 col-sm-12 pb-3 align-middle">
+							<a href="pt-br/index.html" class="btn btn-outline-light btn-doc px-5 py-2 d-flex flex-row justify-content-center rounded-pill">
+								<img src="https://flagcdn.com/br.svg" width="40" alt="Brasil">
+								<span class="fw-bolder ps-2">Portuguese</span>
+							</a>
+						</div>
+						<div class="col-md-6 col-sm-12 pb-3">
+							<a href="en-us/index.html" class="btn btn-outline-light btn-doc px-5 py-2 d-flex flex-row justify-content-center rounded-pill">
+								<img src="https://flagcdn.com/us.svg" width="40" alt="Brasil">
+								<span class="fw-bolder ps-2">English</span>
+							</a>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12 pt-3">
+							<img class="image-size img-fluid" src="assets/images/devices.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+	<footer class="footer text-white position-relative bottom-0 py-3">
+		<div class="container text-center">
+			<small class="copyright">Copyright <i class="fa-regular fa-copyright"></i>
+				<script>document.write(new Date().getFullYear());</script> -
+				<a class="text-white" href="https://www.opencart.com/index.php?route=marketplace/extension&amp;filter_member=Rodrigoabr" target="_blank">Instagram Gallery Extension for Opencart</a>
+			</small>
+		</div>
+
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>
+<script type="text/javascript">
+	const browserLng = navigator.language.toLowerCase();
+	const lng = browserLng.split('-')
+	let e = document.getElementById('lng-' + lng[0]);
+	if (!e) { e = document.getElementById('lng-en');	}
+	e.style.display = 'block';
+</script>
