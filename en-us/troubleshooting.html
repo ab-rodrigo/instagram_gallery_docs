@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Instagram Gallery for Opencart 4.x">
+	<meta name="author" content="Rodrigo Barbosa">
+	<title>Instagram Gallery for Opencart 4.x</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&amp;display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<style>
+		:root {
+			--header-height: 70px;
+			--nav-link-font-size: 0.8rem;
+			--main-font-size: 0.85rem;
+		}
+
+		body {
+			font-family: "Poppins", sans-serif;
+			-webkit-font-smoothing: antialiased;
+			overflow: hidden;
+		}
+
+		main {
+			font-size: var(--main-font-size) !important;
+		}
+
+		#col-aside {
+			left: 0;
+			font-size: var(--nav-link-font-size);
+		}
+
+		#col-main {
+			right: 0;
+		}
+
+		main.container {
+			margin: 0;
+		}
+
+		#col-aside,
+		#col-main {
+			position: absolute;
+			overflow-y: scroll;
+			top: var(--header-height);
+			height: calc(100vh - var(--header-height));
+			bottom: 0;
+		}
+
+		.nav>ul>li.nav-item>a.nav-link {
+			padding-left: 40px;
+		}
+
+		.nav>ul>div>li>a.nav-link,
+		.nav>ul>div>div>li>a.nav-link {
+			padding-left: 40px;
+		}
+
+		section {
+			padding-top: 20px;
+		}
+
+		.theme-icon-holder {
+			display: inline-block;
+			background: #f4fcf6;
+			width: 32px;
+			height: 32px;
+			padding-top: 4px;
+			font-size: 1rem;
+			text-align: center;
+			border-radius: 50%;
+			border: 1px solid var(--bs-gray);
+		}
+
+		.callout-block {
+			padding: 1rem 1.5rem;
+			border-left: 3px solid #5d6778;
+			background: #f5f5f5;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		.callout-block code {
+			background: #fff;
+		}
+
+		.callout-block .callout-title {
+			font-size: 1rem;
+		}
+
+		.callout-block.callout-block-info {
+			border-color: #5b99ea;
+			background: #f9fbfe;
+		}
+
+		.callout-block.callout-block-info .callout-title {
+			color: #1c6fdc;
+		}
+
+		.callout-block.callout-block-success {
+			border-color: #5cb377;
+			background: #e7f4eb;
+		}
+
+		.callout-block.callout-block-success .callout-title {
+			color: #3e8554;
+		}
+
+		.callout-block.callout-block-warning {
+			border-color: #eebf41;
+			background: #fdf6e5;
+		}
+
+		.callout-block.callout-block-warning .callout-title {
+			color: #d09c13;
+		}
+
+		.callout-block.callout-block-danger {
+			border-color: #d26d69;
+			background: #fbf3f2;
+		}
+
+		.callout-block.callout-block-danger .callout-title {
+			color: #b73c37;
+		}
+
+		#download-btn-sm {
+			display: none;
+		}
+
+		@media (max-width: 576px) {
+			.navbar-brand {
+				font-size: 1rem !important;
+			}
+
+			#download-btn-lg {
+				display: none;
+			}
+
+			#download-btn-sm {
+				display: block;
+			}
+		}
+
+		@media (max-width: 392px) {
+			#download-btn-sm {
+				display: none;
+			}
+		}
+		#div-update-msg {
+			font-weight: bold;
+			height: 25px;
+			font-size: medium;
+		}
+		.normal_link {
+			color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<nav class="nnavbar navbar-expand-lg navbar-light bg-light fixed-top d-flex flex-column p-0" aria-label="Instagram Gallery for Opencart 4.x">
+				<div class="col-12 bg-danger text-white d-flex align-items-center justify-content-center" id="div-update-msg">
+					Atualizado - 2025
+				</div>
+				<div class="container-fluid d-flex justify-content-between py-1">
+					<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="padding: 6px 13px;font-size: 1.2rem;border: 1px solid rgb(0,0,0,0.15);border-radius: 0.375rem;color: rgb(0,0,0,0.5);">
+						<i class="fa-solid fa-bars"></i>
+					</button>
+					<a class="navbar-brand ms-3 mt-2" href="#"><strong>Instagram Gallery</strong> | Opencart 4.x</a>
+					<a class="btn btn-success" id="download-btn-lg" target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button">Download</a>
+					<a class="btn btn-success btn-sm" id="download-btn-sm" target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button"><i class="fa-solid fa-download"></i></a>
+				</div>
+			</nav>
+
+			<aside class="col-lg-3 col-xl-3 col-xxl-2 sidebar" id="col-aside">
+				<div class="offcanvas-lg offcanvas-start aside-offcanvas" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+					<div class="offcanvas-header">
+						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Fechar"></button>
+					</div>
+					<div class="offcanvas-body">
+						<nav id="nav" class="nav navbar">
+							<ul class="section-items list-unstyled nav flex-column pb-3">
+								<li class="nav-item section-title collapsed">
+									<a class="nav-link scrollto offcanvas-dismiss" href="index.html"><span class="theme-icon-holder me-2"><i class="fa fa-home"></i></span>Welcome</a>
+								</li>
+								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#about-collapse"><a class="nav-link scrollto" href="index.html#section-about"><span class="theme-icon-holder me-2"><i class="fa fa-info"></i></span>About</a></li>
+								<div id="about-collapse" class="collapse">
+									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-about-overview">Overview</a></li>
+									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-about-features">Features</a></li>
+									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-about-requirements">Requirements</a></li>
+									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-about-support">Support</a></li>
+								</div>
+								<li class="nav-item section-title collapsed">
+									<a class="nav-link scrollto offcanvas-dismiss" href="index.html#section-installation"><span class="theme-icon-holder me-2"><i class="fa-solid fa-upload"></i></span>Install</a>
+								</li>
+								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#gallery-collapse"><a class="nav-link scrollto" href="index.html#section-gallery"><span class="theme-icon-holder me-2"><i class="fa-solid fa-image"></i></span>Galerias</a></li>
+								<div id="gallery-collapse" class="collapse">
+									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-gallery-types">Types of galleries</a></li>
+									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-gallery-create">Creating galleries</a></li>
+									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-gallery-configuration">Settings</a></li>
+									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-gallery-layout">Displaying the gallery</a></li>
+								</div>
+								
+								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#checkout-collapse"><a class="nav-link scrollto" href="index.html#section-api"><span class="theme-icon-holder me-2"><i class="fa fa-gear"></i></span>API</a></li>
+								<div id="checkout-collapse" class="collapse">
+									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-api-facebook-account">Facebook/Instagram Account</a></li>
+									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-api-create-app">Creating application</a></li>
+									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-api-app-configuration">Configurando o aplicativo</a></li>
+								</div>
+								<li class="nav-item section-title collapsed">
+									<a class="nav-link scrollto offcanvas-dismiss" href="index.html#section-licence"><span class="theme-icon-holder me-2"><i class="fa-solid fa-book"></i></span>License</a>
+								</li>
+								<li class="nav-item section-title collapsed">
+									<a class="nav-link scrollto offcanvas-dismiss" href="index.html#section-coffee"><span class="theme-icon-holder me-2"><i class="fa-solid fa-mug-hot"></i></span>Buy me a coffee</a>
+								</li>
+								<li class="nav-item section-title collapsed">
+									<a class="nav-link scrollto offcanvas-dismiss" href="/en-us/troubleshooting.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-bug"></i></span>Troubleshooting</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</aside>
+			<div class="col-lg-9 col-xl-9 col-xxl-10" id="col-main">
+				<main role="main" class="container-lg mt-2">
+					<article class="article px-0 py-4" id="section-troubleshooting">
+						<header class="header">
+							<h1 class="heading">Solução de problemas</h1>
+							<table class="table table-striped table-bordered table-responsive">
+								<thead>
+								  <tr>
+									<th scope="col">Erro</th>
+									<th scope="col">Descrição</th>
+									<th scope="col">Possível solução</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td>Code 412</td>
+									<td>O módulo atingiu o número máximo de tentativas e não foi possível concluir a galeria com as configurações atuais.</td>
+									<td>Altere as configurações em 'Mídia por visualização', 'Tipos de postagens', 'Tipo de mídia do álbum' e 'Quantidade de mídia do álbum'.</td>
+								  </tr>
+								  <tr>
+									<td>{"error_type": "OAuthException", "code": 400, "error_message": "Invalid platform app"}</td>
+									<td>Número de identificação da plataforma inválido.</td>
+									<td>Verifique os campos <a class="nav-link scrollto offcanvas-dismiss normal_link" href="index.html#item-api-app-configuration"><strong>ID do app do Instagram</strong></a> e <a class="nav-link scrollto offcanvas-dismiss normal_link" href="index.html#item-api-app-configuration"><strong>Chave secreta do app do Instagram</strong></a></td>
+										
+								  </tr>
+								  <tr>
+									<td>{"error_type": "OAuthException", "code": 400, "error_message": "Insufficient developer role"}</td>
+									<td>O usuário registrado na seção 'Adicionar um usuário de teste do Instagram' não corresponde ao usuário atualmente logado no navegador.</td>
+									<td>Consulte a seção <a class="nav-link scrollto offcanvas-dismiss normal_link" href="index.html#item-api-app-configuration"><strong>Configurando o aplicativo</strong></a> e certifique-se de que o usuário registrado e o usuário conectado no Instagram pelo navegador sejam os mesmos.</td>
+								  </tr>
+								  <tr>
+									<td>{"error_type": "OAuthException", "code": 400, "error_message": "Invalid redirect_uri"}</td>
+									<td>A URL registrada no aplicativo não corresponde à URL do site.</td>
+									<td>Consulte a seção <a class="nav-link scrollto offcanvas-dismiss normal_link" href="index.html#item-api-app-configuration"><strong>Configurando o aplicativo</strong></a> e certifique-se de que a URL registrada corresponda à do site.</td>
+								  </tr>
+								</tbody>
+							  </table>
+						</header>
+					</article>
+
+
+					<article class="article px-0 py-4" id="section-licence">
+						<header class="header">
+							<h1 class="heading">Licença</h1>
+							<p><a href="https://www.gnu.org/" rel="nofollow">GNU General Public License version 3 (GPLv3)</a></p>
+						</header>
+					</article>
+
+					<article class="article px-0 py-4" id="section-coffee">
+						<header class="header">
+							<h1 class="heading">Buy me a coffee</h1>
+							<p><a href="https://www.paypal.com/donate/?hosted_button_id=SPQH2B32XBJUW" target="_blank"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Donate with PayPal button" title="PayPal - The safer, easier way to pay online!"></a></p>
+
+						</header>
+					</article>
+				</main>
+				<footer class="footer">
+					<div class="container text-center pt-5">
+						<small class="copyright">Copyright <i class="fa-regular fa-copyright"></i>
+							<script>document.write(new Date().getFullYear());</script> -
+							<a class="theme-link" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" target="_blank">Instagram Gallery Extension for Opencart</a>
+						</small>
+					</div>
+					<div class="d-flex justify-content-center">
+						<script> if (document.lastModified) {
+								document.write('<span class="pb-1" style="font-size: 0.7rem;" >Última atualização: ' + document.lastModified + '</span>');
+							}
+						</script>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script>
+		$(".offcanvas-dismiss").click(function(){
+			$('.aside-offcanvas').offcanvas('hide');
+		});
+	</script>
+</body>
+
+</html>

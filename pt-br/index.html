@@ -150,13 +150,15 @@
 				display: none;
 			}
 		}
+
 		#div-update-msg {
 			font-weight: bold;
 			height: 25px;
 			font-size: medium;
 		}
+
 		.normal_link {
-			color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+			color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
 		}
 	</style>
 </head>
@@ -206,7 +208,7 @@
 									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-gallery-configuration">Configuração</a></li>
 									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-gallery-layout">Exibindo a galeria</a></li>
 								</div>
-								
+
 								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#checkout-collapse"><a class="nav-link scrollto" href="#section-api"><span class="theme-icon-holder me-2"><i class="fa fa-gear"></i></span>API</a></li>
 								<div id="checkout-collapse" class="collapse">
 									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-api-facebook-account">Conta Facebook/Instagram</a></li>
@@ -232,7 +234,7 @@
 					<article class="article px-0 py-4" id="section-welcome">
 						<header class="header">
 							<h1 class="heading">Bem-vindo</h1>
-							<p>Este manual tem como objetivo guiar o usuário em todas as etapas do processo de instalação, integração, configuração e uso do módulo.</p>
+							<p>Este manual fornece orientação passo a passo sobre como instalar, integrar, configurar e usar o módulo.</p>
 						</header>
 					</article>
 
@@ -286,40 +288,44 @@
 						</section>
 						<section class="section" id="item-about-support">
 							<h2 class="section-heading">Suporte</h2>
-							<h5 class="my-3">Suporte da extensão</h5>
 							<p>Acesse a <a target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr">página da extensão</a> e clique em <strong>Get Support</strong>.</p>
 						</section>
 					</article>
-					
+
 					<article class="article px-0 py-4 border-top" id="section-installation">
 						<header class="header">
 							<h1 class="heading">Instalação</h1>
-							<ol>
-								<li class="pb-0">Faça download da extensão na <a target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr">página
-										oficial</a> e salve o arquivo em um local conhecido.</li> 
-								<li class="pb-0">
-									A partir do <strong>Painel de Controle</strong>, acesse <strong>Extensões &gt; Instalador</strong> e clique em <strong>Upload</strong> <span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-upload"></i></span>
-								</li>
-								<li class="pb-0">
-									<p>Localize o arquivo, selecione-o e clique em <strong>Abrir</strong> ou dê um duplo clique no nome do arquivo.</p>
-									<p>Aguarde a instalação ser concluída. A extensão será listada na tabela de <strong>Extensões instaladas</strong>.</p>
-									<div class="col-md-6 col-sm-12">
-										<img class="figure-img img-fluid shadow rounded" src="../assets/images/docs-installation-extension-list.png" alt="" title="Extensões instaladas" />
-									</div>
-								</li>
-								<li class="pb-0">Clique em <strong>Instalar</strong> <span class="border rounded ms-1" style="border-color: #3c933c;color: #fff;background-color: #4cb64c;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-plus-circle"></i></span></li>
-								<li class="pb-0">
-									<p>A partir do painel de controle do Opencart acesse as configurações do módulo em <strong>Extensões &gt; Extensões</strong>, selecione <strong>Módulos</strong> em Tipo de extensão, localize a galeria criada anteriormente e clique em <strong>Editar</strong>
-									</strong><span class="border rounded ms-1" style="border-color: #3c933c;color: #fff;background-color: #4cb64c;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-plus-circle"></i></span></span>.
-									<div class="col-md-6 col-sm-12">
-										<img class="figure-img img-fluid shadow rounded" src="../assets/images/docs-installation-module-extensions-list.png" alt="" title="Lista de Módulos instalados" />
-									</div>
-								</li>
-							</ol>
 						</header>
-
+						<ol>
+							<li class="pb-0">
+								<p>Faça download da extensão na <a target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr">página oficial</a> e salve o arquivo em um local conhecido.</p>
+							</li>
+							<li class="pb-0">
+								<p>A partir do <strong>Painel de Controle</strong>, acesse <strong>Extensões</strong> > <strong>Instalador</strong> e clique em <strong>Upload</strong>.
+									<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-upload"></i></span>
+								</p>
+							</li>
+							<li class="pb-0">
+								<p>Localize o arquivo, selecione-o e clique em <strong>Abrir</strong> ou dê um duplo clique no nome do arquivo. Aguarde a instalação ser concluída. A extensão será listada na tabela de <strong>Extensões instaladas</strong>.
+								<div class="col-md-6 col-sm-12">
+									<img class="figure-img img-fluid shadow rounded" src="../assets/images/docs-installation-extension-list.png" alt="" title="Extensões instaladas" />
+								</div>
+								</p>
+							</li>
+							<li class="pb-0">
+								<p>Clique em <strong>Instalar</strong>.<span class="border rounded ms-1" style="border-color: #3c933c;color: #fff;background-color: #4cb64c;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-plus-circle"></i></span></p>
+							</li>
+							<li class="pb-0">
+								<p>Acesse as configurações do módulo em <strong>Extensões > Extensões</strong>, selecione <strong>Módulos</strong>, localize a galeria criada anteriormente e clique em <strong>Editar</strong>
+									</strong><span class="border rounded ms-1" style="border-color: #3c933c;color: #fff;background-color: #4cb64c;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-plus-circle"></i></span>
+								<div class="col-md-6 col-sm-12">
+									<img class="figure-img img-fluid shadow rounded" src="../assets/images/docs-installation-module-extensions-list.png" alt="" title="Lista de Módulos instalados" />
+								</div>
+								</p>
+							</li>
+						</ol>
 					</article>
-					
+
 					<article class="article px-0 py-4 border-top" id="section-gallery">
 						<header class="header">
 							<h1 class="heading">Galerias</h1>
@@ -348,29 +354,29 @@
 							</section>
 
 							<section class="section" id="item-gallery-create">
-								<h2 class="section-heading">Criando galerias</h2> 
-								<p>Clique em <strong>Extensões &gt; Extensões</strong> a partir do <strong>Painel de Controle</strong>, 
-									selecione <strong>Módulos</strong> em Tipo de extensão, encontre <strong>Instagram Gallery</strong> 
+								<h2 class="section-heading">Criando galerias</h2>
+								<p>Clique em <strong>Extensões > Extensões</strong> a partir do <strong>Painel de Controle</strong>,
+									selecione <strong>Módulos</strong> em Tipo de extensão, encontre <strong>Instagram Gallery</strong>
 									e clique em <strong>Editar</strong>
-								</strong>
-								<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-pencil"></i></span>
-								ou <strong>Novo</strong>
-								<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-circle-plus"></i>
+									</strong>
+									<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-pencil"></i></span>
+									ou <strong>Novo</strong>
+									<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-circle-plus"></i>
 								</p>
 								<div class="col-md-6 col-sm-12">
 									<img class="figure-img img-fluid shadow rounded" src="../assets/images/docs-installation-module-extensions-list.png" alt="" title="Lista de Módulos instalados" />
 								</div>
 
 								<h4 class="my-3">Criando uma Galeria Pai</h4>
-								Digite o nome da nova galeria e clique no botão Salvar.
+								<p>Digite o nome da nova galeria e clique em <strong>Salvar</strong>.</p>
 								<div class="col-md-6 col-sm-12">
 									<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-create-gallery-main-pt-br.png" alt="" title="Criando galeria pai" />
 								</div>
 
 								<h4 class="my-3">Criando uma Galeria Filho</h4>
-								Digite o nome da nova galeria, selecione a galeria pai e clique no botão Salvar.
+								<p>Digite o nome da nova galeria, selecione a galeria pai e clique no botão <strong>Salvar</strong>.</p>
 								<div class="col-md-6 col-sm-12">
-									<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-create-gallery-child-pt-br.png" alt="" title="Criando galeria pai" />
+									<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-create-gallery-child-pt-br.png" alt="" title="Criando galeria filho" />
 								</div>
 								<div class="callout-block callout-block-info">
 									<div class="content">
@@ -380,10 +386,10 @@
 											</span>
 											Nota
 										</h4>
-										<p>Obrigatório que haja ao menos uma galeria pai com API configurada e funcionando para criar galerias filhos.</p>
+										<p>É obrigatório que haja pelo menos uma galeria principal com uma API configurada e funcionando para criar galerias filhas.</p>
 									</div>
 								</div>
-							</section> 
+							</section>
 
 							<section class="section" id="item-gallery-configuration">
 								<h2 class="section-heading">Configuração</h2>
@@ -433,7 +439,7 @@
 										</tr>
 									</tbody>
 								</table>
-	
+
 								<h4 class="my-3">Configurações de visualição</h4>
 								<div class="col-md-6 col-sm-12">
 									<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-view-tab-pt-br.png" alt="" title="Aba visualização" />
@@ -494,22 +500,23 @@
 								<h2 class="section-heading">Exibindo a galeria</h2>
 								<ol>
 									<li>
-										No Painel de controle acesse <strong>Design</strong> > <strong>Layouts</strong>, escolha o layout que deseja exibir a galeria e clique em <strong>Editar</strong>
-										<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-pencil"></i></span>.
+										<p>Acesse <strong>Design</strong> > <strong>Layouts</strong>, escolha o layout que deseja exibir a galeria e clique em <strong>Editar</strong>.
+											<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-pencil"></i></span>
+										</p>
 									</li>
 									<li>
-										Na posição escolhida clique em <strong>Adicionar módulo</strong>
-										<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-plus-circle"></i></span>.
+										<p>Na posição escolhida clique em <strong>Adicionar módulo</strong>.
+											<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-plus-circle"></i></span>
+										</p>
 									</li>
 									<li>
-										Selecione a galeria no item Instagram Gallery e clique em <strong>Salvar</strong>
-										<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-floppy-disk"></i></span>.
+										<p>Selecione a galeria e clique em <strong>Salvar</strong>.
+											<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-floppy-disk"></i></span>
+										</p>
 									</li>
 								</ol>
 
 							</section>
-
-
 
 						</section>
 					</article>
@@ -523,67 +530,68 @@
 							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-create-app">Criando aplicativo</a></li>
 							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-app-configuration">Configurando o aplicativo</a></li>
 						</ol>
-	
+
 						<section class="section" id="item-api-facebook-account">
-							<h2 class="my-3">Contas Facebook Developers / Instagram Business</h2>
+							<h2 class="my-3">Contas Facebook Developers/Instagram Business</h2>
 							<div class="callout-block callout-block-success">
 								<div class="content">
 									<h4 class="callout-title">
 										<span class="callout-icon-holder me-1">
 											<i class="fas fa-thumbs-up"></i>
 										</span>
-										Contas Facebook Developers / Instagram Business
+										Contas Facebook Developers/Instagram Business
 									</h4>
-									<p class="mb-0">Antes de iniciar:
-										<ol>
-											<li>Certifique-se de que você já possui uma <a target="_blank" href="https://developers.facebook.com/">Conta de Desenvolvedor do Facebook</a> e verifique se a loja não está em modo de manutenção.</li>
-											<li>Certifique-se de que a conta do Instagram que fornecerá as imagens seja do tipo empresarial. <a target="_blank" href="https://help.instagram.com/502981923235522/?helpref=uf_share">Como configurar uma conta empresarial no Instagram</a></li>
-										</ol> 
-										
-									</p>
+									<p class="mb-0">Antes de iniciar:</p>
+									<ol>
+										<li>
+											<p>Certifique-se de que você já possui uma <a target="_blank" href="https://developers.facebook.com/">Conta de Desenvolvedor do Facebook</a> e verifique se a loja não está em modo de manutenção.</p>
+										</li>
+										<li>
+											<p>Certifique-se de que a conta do Instagram que fornecerá as imagens seja do tipo empresarial. <a target="_blank" href="https://help.instagram.com/502981923235522/?helpref=uf_share">Como configurar uma conta empresarial no Instagram</a></p>
+										</li>
+									</ol>
 								</div>
 							</div>
 						</section>
-
 
 						<section class="section" id="item-api-create-app">
 							<h2 class="my-3">Criando aplicação</h2>
 							<ol>
 								<li>
-									Acesse sua <a target="_blank" href="https://developers.facebook.com/">Conta de Desenvolvedor do Facebook</a>, clique em <strong>Meus apps.</strong>
+									<p>Acesse sua <a target="_blank" href="https://developers.facebook.com/">Conta de Desenvolvedor do Facebook</a>, clique em <strong>Meus apps</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-create-app-step-1-pt-br.png" alt="" title="Meus apps" />
 									</div>
 								</li>
 								<li>
-									Clique em Criar aplicativo.
+									<p>Clique em <strong>Criar aplicativo</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-create-app-step-2-pt-br.png" alt="" title="Criar aplicativo" />
 									</div>
 								</li>
 								<li>
-									Entre com o nome do aplicativo e clique em <strong>Avançar</strong>.
+									<p>Entre com o nome do aplicativo e clique em <strong>Avançar</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-create-app-step-3-pt-br.png" alt="" title="Nome do aplicativo" />
 									</div>
 								</li>
 								<li>
-									Selecione a opção <strong>Outro</strong> e clique em <strong>Avançar</strong>
+									<p>Selecione a opção <strong>Outro</strong> e clique em <strong>Avançar</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-create-app-step-4-pt-br.png" alt="" title="Caso de uso" />
 									</div>
 								</li>
 								<li>
-									Selecione a opção <strong>Empresa</strong> e clique em <strong>Avançar</strong>
+									<p>Selecione a opção <strong>Empresa</strong> e clique em <strong>Avançar</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-create-app-step-5-pt-br.png" alt="" title="Nome do aplicativo" />
-									</div> 
+									</div>
 								</li>
 								<li>
-									Revise as informações e clique em <strong>Criar aplicativo</strong>
+									<p>Revise as informações e clique em <strong>Criar aplicativo</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-create-app-step-6-pt-br.png" alt="" title="Nome do aplicativo" />
-									</div> 
+									</div>
 								</li>
 							</ol>
 						</section>
@@ -598,67 +606,66 @@
 									</div>
 								</li>
 								<li>
-									<p>No menu lateral acesse <strong>Funções do app</strong> &gt; <strong>Funções</strong>, botão <strong>Adicionar pessoas</strong>.</p>
+									<p>No menu lateral acesse <strong>Funções do app</strong> > <strong>Funções</strong>, clique em <strong>Adicionar pessoas</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-2-pt-br.png" alt="" title="Adicionar pessoas" />
-									</div> 
+									</div>
 								</li>
 								<li>
 									<p>Marque a opção <strong>Testador do Instagram</strong>. Adicione a conta que fornecerá as mídias e clique em <strong>Avançar</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-3-pt-br.png" alt="" title="Adicionar conta Instagram" />
-									</div> 
+									</div>
 								</li>
 								<li>
-									<p></p>No navegador, faça login na conta do Instagram informada no passo anterior, 
-									acesse <strong>Mais</strong> &gt; <strong>Configurações</strong> &gt; <strong>Permissões do site</strong> &gt; <strong>Apps e sites</strong>.</p>
-									<p>Na guia <strong>Convites Do Testador</strong>, clique em <strong>Aceitar</strong></p>									
+									<p>No navegador, faça login na conta do Instagram informada no passo anterior,
+										acesse <strong>Mais</strong> > <strong>Configurações</strong> > <strong>Permissões do site</strong> > <strong>Apps e sites</strong>. Na guia <strong>Convites Do Testador</strong>, clique em <strong>Aceitar</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-4-pt-br.png" alt="" title="Convite de testador" />
-									</div> 
+									</div>
 								</li>
 								<li>
-									<p>Acesse as configurações do módulo em <strong>Extensões &gt; Extensões</strong> a partir do <strong>Painel de Controle</strong>, 
+									<p>Acesse as configurações do módulo em <strong>Extensões > Extensões</strong>,
 										selecione <strong>Módulos</strong> em Tipo de extensão, localize a galeria criada anteriomente e clique em <strong>Editar</strong>.
-										<span class="border rounded ms-1" style="border-color:#1e91cf !important;color: #1e91cf;background-color: #fff;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-pencil"></i></span>
-										<p>Na aba <strong>API</strong>, copie a <strong>URL da loja</strong>.</p>
-										<div class="col-md-6 col-sm-12 mb-3">
-											<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-5-pt-br.png" alt="" title="Copiar URL da loja" />
-										</div>
+										<span class="border rounded ms-1" style="border-color:#1e91cf !important;color: #1e91cf;background-color: #fff;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-pencil"></i></span></p>
+									<p>Na aba <strong>API</strong>, copie a <strong>URL da loja</strong>.</p>
+									<div class="col-md-6 col-sm-12 mb-3">
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-5-pt-br.png" alt="" title="Copiar URL da loja" />
+									</div>
 								</li>
 								<li>
-										<p>Retorne ao painel do aplicativo, no menu à esquerda acesse <strong>Instagram</strong> &gt; <strong>Configurações da API com login do Instagram</strong>, localize o item <strong>Configure o login da empresa no Instagram</strong> e clique em <strong>Configurar</strong>.</p>
-										<p>Cole a <strong>URL da loja</strong> e clique em <strong>Salvar</strong></p>
-										<div class="col-md-6 col-sm-12 mb-3">
-											<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-6-pt-br.png" alt="" title="Colar URL da loja" />
-										</div> 
+									<p>Retorne ao painel do aplicativo, no menu à esquerda acesse <strong>Instagram</strong> > <strong>Configurações da API com login do Instagram</strong>, localize o item <strong>Configure o login da empresa no Instagram</strong> e clique em <strong>Configurar</strong>.</p>
+									<p>Cole a <strong>URL da loja</strong> e clique em <strong>Salvar</strong></p>
+									<div class="col-md-6 col-sm-12 mb-3">
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-6-pt-br.png" alt="" title="Colar URL da loja" />
+									</div>
 								</li>
 								<li>
 									<p>Ainda no painel do aplicativo, copie a <strong>ID do app do Instagram</strong> e <strong>Chave secreta do app do Instagram</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-7-pt-br.png" alt="" title="Copiar id" />
-									</div> 
+									</div>
 								</li>
 								<li>
-									<p>Retore às configurações do módulo, na aba <strong>API</strong>, cole a <strong>ID do app do Instagram</strong> e <strong>Chave secreta do app do Instagram</strong> nos campos correspondentes. Clique no botão <strong>Obter autorização</strong></p>
+									<p>Retore às configurações do módulo, na aba <strong>API</strong>, cole a <strong>ID do app do Instagram</strong> e <strong>Chave secreta do app do Instagram</strong> nos campos correspondentes. Clique em <strong>Obter autorização</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-8-pt-br.png" alt="" title="Colar id" />
-									</div>  
+									</div>
 								</li>
 								<li>
 									<p>Será aberto um popup solicitando autorização, clique em <strong>Permitir</strong>. Caso não esteja logado no <strong>Instagram</strong>, será necessário inserir seu login e senha antes de prosseguir com a autorização.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-9-pt-br.png" alt="" title="Autorização no Instagram" />
-									</div>  
+									</div>
 								</li>
 								<li>
 									<p>Uma tela de confirmação será exibida ao final. Retorne às configurações do módulo e verifique o <strong>Status da API</strong>. Se necessário, atualize a tela.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-10-pt-br.png" alt="" title="Status da integração" />
-									</div>  
+									</div>
 								</li>
-							</ol> 
- 						</section>
+							</ol>
+						</section>
 
 
 					</article>
@@ -698,7 +705,7 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	<script>
-		$(".offcanvas-dismiss").click(function(){
+		$(".offcanvas-dismiss").click(function () {
 			$('.aside-offcanvas').offcanvas('hide');
 		});
 	</script>
