@@ -167,9 +167,6 @@
 	<div class="container">
 		<div class="row">
 			<nav class="nnavbar navbar-expand-lg navbar-light bg-light fixed-top d-flex flex-column p-0" aria-label="Instagram Gallery for Opencart 4.x">
-				<div class="col-12 bg-danger text-white d-flex align-items-center justify-content-center" id="div-update-msg">
-					Atualizado - 2025
-				</div>
 				<div class="container-fluid d-flex justify-content-between py-1">
 					<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="padding: 6px 13px;font-size: 1.2rem;border: 1px solid rgb(0,0,0,0.15);border-radius: 0.375rem;color: rgb(0,0,0,0.5);">
 						<i class="fa-solid fa-bars"></i>
@@ -214,6 +211,7 @@
 									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-api-facebook-account">Facebook/Instagram Account</a></li>
 									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-api-create-app">Creating application</a></li>
 									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-api-app-configuration">Configuring the application</a></li>
+									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-api-app-token">Access token</a></li>
 								</div>
 								<li class="nav-item section-title collapsed">
 									<a class="nav-link scrollto offcanvas-dismiss" href="index.html#section-licence"><span class="theme-icon-holder me-2"><i class="fa-solid fa-book"></i></span>License</a>
@@ -619,6 +617,21 @@
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/en-us/docs-config-app-step-4-pt-br.png" alt="" title="Tester invitation" />
 									</div>
 								</li>
+							</ol>
+						</section>
+
+						<section class="section" id="item-api-app-token">
+							<h2 class="my-3">Access token</h2>
+							<p>There are two ways to obtain the access token:</p>
+							<ol>
+								<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-app-token-auth-window">Authorization Window</a></li>
+								<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-app-token-copy-paste">Token copy and paste</a></li>
+							</ol>
+						</section>
+
+						<section class="section" id="item-api-app-token-auth-window">
+							<h4 class="my-3">Obter token de acesso via janela de autorização</h4>
+							<ol>
 								<li>
 									<p>Access the module settings in <strong>Extensions</strong> > <strong>Extensions</strong>, select <strong>Modules</strong> in <strong>Extension Type</strong>,
 										locate the gallery you created earlier, and click <strong>Edit</strong>.
@@ -658,6 +671,37 @@
 									<p>A confirmation screen will appear at the end. Return to the module settings and check the <strong>API Status</strong>. If necessary, refresh the screen.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/en-us/docs-config-app-step-10-pt-br.png" alt="" title="Integration status" />
+									</div>
+								</li>
+							</ol>
+						</section>
+
+						<section class="section" id="item-api-app-token-copy-paste">
+							<h4 class="my-3">Token copy and paste</h4>
+							<ol>
+								<li>
+									<p>In the application dashboard, on the left menu, go to <strong>Instagram</strong> > <strong>API Setup with Instagram Login</strong>, find the <strong>Generate access tokens</strong> and click <strong>Generate Token</strong>.</p>
+									<div class="col-md-6 col-sm-12 mb-3">
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-token-step-1-pt-br.png" alt="" title="Generate access tokens" />
+									</div>
+								</li>
+								<li>
+									<p>After logging in, click <strong>Allow</strong>.</p>
+									<div class="col-md-6 col-sm-12 mb-3">
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-9-pt-br.png" alt="" title="Authorization">
+									</div>
+								</li>
+								<li>
+									<p>Check the <strong>I Understand</strong> option and click <strong>Copy</strong></p>
+									<div class="col-md-6 col-sm-12 mb-3">
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-token-step-2-pt-br.png" alt="" title="Copiar token" />
+									</div>
+								</li>
+								<li>
+									<p>Nas configurações do módulo, aba <strong>Integração</strong>, cole o token e clique em <strong>Validar token</strong>.</p>
+									<p>In the module settings, <strong>Integration</strong> tab, paste the token and click <strong>Validate token</strong>.</p>
+									<div class="col-md-6 col-sm-12 mb-3">
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-token-step-3-pt-br.png" alt="" title="Colar e validar token" />
 									</div>
 								</li>
 							</ol>
