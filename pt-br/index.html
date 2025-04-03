@@ -214,6 +214,7 @@
 									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-api-facebook-account">Conta Facebook/Instagram</a></li>
 									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-api-create-app">Criando aplicativo</a></li>
 									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-api-app-configuration">Configurando o aplicativo</a></li>
+									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-api-app-token">Token de acesso</a></li>
 								</div>
 								<li class="nav-item section-title collapsed">
 									<a class="nav-link scrollto offcanvas-dismiss" href="#section-licence"><span class="theme-icon-holder me-2"><i class="fa-solid fa-book"></i></span>Licença</a>
@@ -624,6 +625,21 @@
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-4-pt-br.png" alt="" title="Convite de testador" />
 									</div>
 								</li>
+							</ol>
+						</section>
+
+						<section class="section" id="item-api-app-token">
+							<h2 class="my-3">Token de acesso</h2>
+							<p>Existem duas maneiras de se obter o token de acesso:</p>
+							<ol>
+								<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-app-token-auth-window">Via Janela de Autorização</a></li>
+								<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-app-token-copy-paste">Token copia e cola</a></li>
+							</ol>
+						</section>
+						
+						<section class="section" id="item-api-app-token-auth-window">
+							<h4 class="my-3">Obter token de acesso via janela de autorização</h4>
+							<ol>
 								<li>
 									<p>Acesse as configurações do módulo em <strong>Extensões > Extensões</strong>,
 										selecione <strong>Módulos</strong> em Tipo de extensão, localize a galeria criada anteriomente e clique em <strong>Editar</strong>.
@@ -667,6 +683,35 @@
 							</ol>
 						</section>
 
+						<section class="section" id="item-api-app-token-copy-paste">
+							<h4 class="my-3">Token copia e cola</h4>
+							<ol>
+								<li>
+									<p>No painel do aplicativo, menu à esquerda acesse <strong>Instagram</strong> > <strong>Configurações da API com login do Instagram</strong>, localize o item <strong>Gere tokens de acesso</strong> e clique em <strong>Gerar token</strong>.</p>
+									<div class="col-md-6 col-sm-12 mb-3">
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-token-step-1-pt-br.png" alt="" title="Gerar token" />
+									</div>
+								</li>
+								<li>
+									<p>Após realizar o login, clique em <strong>Permitir</strong>.</p>
+									<div class="col-md-6 col-sm-12 mb-3">
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-9-pt-br.png" alt="" title="Autorização no Instagram">
+									</div>
+								</li>
+								<li>
+									<p>Marque a opção <strong>Estou ciente</strong> e clique em <strong>Copiar</strong></p>
+									<div class="col-md-6 col-sm-12 mb-3">
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-token-step-2-pt-br.png" alt="" title="Copiar token" />
+									</div>
+								</li>
+								<li>
+									<p>Nas configurações do módulo, aba <strong>Integração</strong>, cole o token e clique em <strong>Validar token</strong>.</p>
+									<div class="col-md-6 col-sm-12 mb-3">
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-token-step-3-pt-br.png" alt="" title="Colar e validar token" />
+									</div>
+								</li>
+							</ol>
+						</section>
 
 					</article>
 
