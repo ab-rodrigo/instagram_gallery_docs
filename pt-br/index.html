@@ -270,8 +270,6 @@
 						<section class="section" id="item-about-requirements">
 							<h2 class="section-heading">Requisitos</h2>
 							<ul>
-								<li class="pb-0">Opencart 4.x com certificado SSL (obrigatório para a integração com API do Instagram).</li>
-								<li class="pb-0">Download da extensão na versão correspondente à sua instalação do Opencart.</li>
 								<li class="pb-0">Conta de desenvolvedor Meta Facebook. <a target="_blank" href="https://developers.facebook.com/">Acesse o Painel de Desenvolvedor do Facebook.</a></li>
 								<li class="pb-0">Conta empresarial no Instagram. <a target="_blank" href="https://help.instagram.com/502981923235522/?helpref=uf_share">Como configurar uma conta empresarial no Instagram</a></li>
 								<li class="pb-0">Permissões de acesso e modificaçãono Opencart:
@@ -600,7 +598,7 @@
 								<li>
 									<p>Vá em <strong>Adicionar produto</strong> no painel do aplicativo. Procure por <strong>Instagram</strong> e clique em <strong>Configurar</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-1-pt-br.png" alt="" title="Adicionando produto" width="300px"/>
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-1-pt-br.png" alt="" title="Adicionando produto" width="300px" />
 									</div>
 								</li>
 								<li>
@@ -619,7 +617,7 @@
 									<p>No navegador, faça login na conta do Instagram informada no passo anterior,
 										acesse <strong>Mais</strong> > <strong>Configurações</strong> > <strong>Permissões do site</strong> > <strong>Apps e sites</strong>. Na guia <strong>Convites Do Testador</strong>, clique em <strong>Aceitar</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-4-pt-br.png" alt="" title="Convite de testador" width="300px"/>
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-4-pt-br.png" alt="" title="Convite de testador" width="300px" />
 									</div>
 								</li>
 							</ol>
@@ -627,61 +625,6 @@
 
 						<section class="section" id="item-api-app-token">
 							<h2 class="my-3">Token de acesso</h2>
-							<p>Existem duas maneiras de se obter o token de acesso:</p>
-							<ol>
-								<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-app-token-auth-window">Janela de Autorização</a></li>
-								<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-app-token-copy-paste">Token copia e cola</a></li>
-							</ol>
-						</section>
-						
-						<section class="section" id="item-api-app-token-auth-window">
-							<h4 class="my-3">Obter token de acesso via janela de autorização</h4>
-							<ol>
-								<li>
-									<p>Acesse as configurações do módulo em <strong>Extensões > Extensões</strong>,
-										selecione <strong>Módulos</strong> em Tipo de extensão, localize a galeria criada anteriomente e clique em <strong>Editar</strong>.
-										<span class="border rounded ms-1" style="border-color:#1e91cf !important;color: #1e91cf;background-color: #fff;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-pencil"></i></span></p>
-									<p>Na aba <strong>API</strong>, copie a <strong>URL da loja</strong>.</p>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-5-pt-br.png" alt="" title="Copiar URL da loja" />
-									</div>
-								</li>
-								<li>
-									<p>Retorne ao painel do aplicativo, no menu à esquerda acesse <strong>Instagram</strong> > <strong>Configurações da API com login do Instagram</strong>, localize o item <strong>Configure o login da empresa no Instagram</strong> e clique em <strong>Configurar</strong>.</p>
-									<p>Cole a <strong>URL da loja</strong> e clique em <strong>Salvar</strong></p>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-6-pt-br.png" alt="" title="Colar URL da loja" />
-									</div>
-								</li>
-								<li>
-									<p>Ainda no painel do aplicativo, copie a <strong>ID do app do Instagram</strong> e <strong>Chave secreta do app do Instagram</strong>.</p>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-7-pt-br.png" alt="" title="Copiar id" />
-									</div>
-								</li>
-								<li>
-									<p>Retore às configurações do módulo, na aba <strong>API</strong>, cole a <strong>ID do app do Instagram</strong> e <strong>Chave secreta do app do Instagram</strong> nos campos correspondentes. Clique em <strong>Obter autorização</strong>.</p>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-8-pt-br.png" alt="" title="Colar id" />
-									</div>
-								</li>
-								<li>
-									<p>Será aberto um popup solicitando autorização, clique em <strong>Permitir</strong>. Caso não esteja logado no <strong>Instagram</strong>, será necessário inserir seu login e senha antes de prosseguir com a autorização.</p>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-9-pt-br.png" alt="" title="Autorização no Instagram" width="300px"/>
-									</div>
-								</li>
-								<li>
-									<p>Uma tela de confirmação será exibida ao final. Retorne às configurações do módulo e verifique o <strong>Status da API</strong>. Se necessário, atualize a tela.</p>
-									<div class="col-md-6 col-sm-12 mb-3">
-										<img class="figure-img img-fluid shadow rounded" src="../assets/images/pt-br/docs-config-app-step-10-pt-br.png" alt="" title="Status da integração" />
-									</div>
-								</li>
-							</ol>
-						</section>
-
-						<section class="section" id="item-api-app-token-copy-paste">
-							<h4 class="my-3">Token copia e cola</h4>
 							<ol>
 								<li>
 									<p>No painel do aplicativo, menu à esquerda acesse <strong>Instagram</strong> > <strong>Configurações da API com login do Instagram</strong>, localize o item <strong>Gere tokens de acesso</strong> e clique em <strong>Gerar token</strong>.</p>
