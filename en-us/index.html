@@ -13,7 +13,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<style>
 		:root {
-			--header-height: 70px;
+			--header-height: 80px;
 			--nav-link-font-size: 0.8rem;
 			--main-font-size: 0.85rem;
 		}
@@ -65,14 +65,15 @@
 
 		.theme-icon-holder {
 			display: inline-block;
-			background: #f4fcf6;
+			/* background: #f4fcf6; */
 			width: 32px;
 			height: 32px;
 			padding-top: 4px;
 			font-size: 1rem;
 			text-align: center;
 			border-radius: 50%;
-			border: 1px solid var(--bs-gray);
+			border: 1px solid;
+			/* border: 1px solid var(--bs-gray); */
 		}
 
 		.callout-block {
@@ -103,6 +104,7 @@
 		.callout-block.callout-block-success {
 			border-color: #5cb377;
 			background: #e7f4eb;
+			color:#212529 !important;
 		}
 
 		.callout-block.callout-block-success .callout-title {
@@ -145,11 +147,11 @@
 			}
 		}
 
-		@media (max-width: 392px) {
+		/* @media (max-width: 392px) {
 			#download-btn-sm {
 				display: none;
 			}
-		}
+		} */
 
 		#div-update-msg {
 			font-weight: bold;
@@ -160,20 +162,31 @@
 		.normal_link {
 			color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
 		}
+
+		.article > ol > li > p {
+			margin-bottom: 0px;
+		}
+
+		ol, ul {
+			padding-left: 3rem;
+		}
 	</style>
 </head>
 
 <body>
 	<div class="container">
 		<div class="row">
-			<nav class="nnavbar navbar-expand-lg navbar-light bg-light fixed-top d-flex flex-column p-0" aria-label="Instagram Gallery for Opencart 4.x">
-				<div class="container-fluid d-flex justify-content-between py-1">
-					<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="padding: 6px 13px;font-size: 1.2rem;border: 1px solid rgb(0,0,0,0.15);border-radius: 0.375rem;color: rgb(0,0,0,0.5);">
+			<nav class="navbar navbar-expand-lg fixed-top d-flex flex-column p-0 border-bottom" aria-label="Instagram Gallery for Opencart 4.x">
+				<div class="container-fluid d-flex justify-content-between align-items-center">
+					<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="padding: 12px 12px;font-size: 1.2rem;border: 1px solid; border-radius: 0.375rem;">
 						<i class="fa-solid fa-bars"></i>
 					</button>
-					<a class="navbar-brand ms-3 mt-2" href="#"><strong>Instagram Gallery</strong> | Opencart 4.x</a>
-					<a class="btn btn-success" id="download-btn-lg" target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button">Download</a>
-					<a class="btn btn-success btn-sm" id="download-btn-sm" target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button"><i class="fa-solid fa-download"></i></a>
+					<a class="navbar-brand ms-3 mt-2" href="#"><strong>Instagram Gallery</strong><br>Opencart 4.x</a>
+					<div class="d-flex align-items-center">
+						<span id="darkModeToggle" class="px-3"></span>
+						<a class="btn btn-success" id="download-btn-lg" target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button">Download</a>
+						<a class="btn btn-success btn-sm" id="download-btn-sm" target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button"><i class="fa-solid fa-download"></i></a>
+					</div>
 				</div>
 			</nav>
 
@@ -190,28 +203,27 @@
 								</li>
 								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#about-collapse"><a class="nav-link scrollto" href="index.html#section-about"><span class="theme-icon-holder me-2"><i class="fa fa-info"></i></span>About</a></li>
 								<div id="about-collapse" class="collapse">
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-about-overview">Overview</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-about-features">Features</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-about-requirements">Requirements</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-about-support">Support</a></li>
+									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="index.html#item-about-overview">Overview</a></li>
+									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="index.html#item-about-features">Features</a></li>
+									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="index.html#item-about-requirements">Requirements</a></li>
+									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="index.html#item-about-support">Support</a></li>
 								</div>
 								<li class="nav-item section-title collapsed">
 									<a class="nav-link scrollto offcanvas-dismiss" href="index.html#section-installation"><span class="theme-icon-holder me-2"><i class="fa-solid fa-download"></i></span>Install</a>
 								</li>
 								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#gallery-collapse"><a class="nav-link scrollto" href="index.html#section-gallery"><span class="theme-icon-holder me-2"><i class="fa-solid fa-image"></i></span>Galleries</a></li>
 								<div id="gallery-collapse" class="collapse">
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-gallery-types">Types</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-gallery-create">Creating</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-gallery-configuration">Configurations</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-gallery-layout">Displaying</a></li>
+									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="index.html#item-gallery-create">Creating</a></li>
+									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="index.html#item-gallery-settings">Settings</a></li>
+									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="index.html#item-gallery-layout">Displaying</a></li>
 								</div>
 
 								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#checkout-collapse"><a class="nav-link scrollto" href="index.html#section-api"><span class="theme-icon-holder me-2"><i class="fa fa-gear"></i></span>API</a></li>
 								<div id="checkout-collapse" class="collapse">
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-api-facebook-account">Facebook/Instagram Account</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-api-create-app">Creating application</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="index.html#item-api-app-configuration">Configuring the application</a></li>
-									<li class="nav-item"><a class="nav-link offcanvas-dismiss" href="#item-api-app-token">Access token</a></li>
+									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="index.html#item-api-facebook-account">Facebook/Instagram Account</a></li>
+									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="index.html#item-api-create-app">Creating application</a></li>
+									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="index.html#item-api-app-settings">Application Setup</a></li>
+									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="#item-api-app-token">Access token</a></li>
 								</div>
 								<li class="nav-item section-title collapsed">
 									<a class="nav-link scrollto offcanvas-dismiss" href="index.html#section-licence"><span class="theme-icon-holder me-2"><i class="fa-solid fa-book"></i></span>License</a>
@@ -229,14 +241,14 @@
 			</aside>
 			<div class="col-lg-9 col-xl-9 col-xxl-10" id="col-main">
 				<main role="main" class="container-lg mt-2">
-					<article class="article px-0 py-4" id="section-welcome">
+					<article class="article px-0 py-0" id="section-welcome">
 						<header class="header">
 							<h1 class="heading">Welcome</h1>
 							<p>This manual provides step-by-step guidance on how to install, integrate, configure, and use the module.</p>
 						</header>
 					</article>
 
-					<article class="article px-0 py-4" id="section-about">
+					<article class="article px-0 py-4 border-top" id="section-about">
 						<header class="header">
 							<h1 class="heading">About</h1>
 						</header>
@@ -246,43 +258,43 @@
 							<li><a class="nav-link offcanvas-dismiss normal_link" href="#item-about-requirements">Requirements</a></li>
 							<li><a class="nav-link offcanvas-dismiss normal_link" href="#item-about-support">Support</a></li>
 						</ol>
-						<section class="section" id="item-about-overview">
+						<section class="section ps-3" id="item-about-overview">
 							<h2 class="section-heading">Overview</h2>
 							<p>Enhance your e-commerce experience with image galleries based on your Instagram posts. Add effects and captions to give it a special touch. Use the hashtag feature to filter your media efficiently. Create different galleries for different layouts, each with personalized settings. Ensure that images are automatically updated to keep your content fresh and relevant.</p>
 							<div class="col-md-6 col-sm-12">
-								<img class="figure-img img-fluid shadow rounded" src="../assets/images/docs-example.png" alt="" title="Example" />
+								<img class="figure-img img-fluid shadow rounded" src="../assets/images/docs-example.png" alt="" title="Example" style="height: 400px;"/>
 							</div>
 						</section>
-						<section class="section" id="item-about-features">
+						<section class="section ps-3" id="item-about-features">
 							<h2 class="section-heading">Features</h2>
 							<ul>
-								<li class="pb-0">3 types of visualization.</li>
-								<li class="pb-0">Multiple galleries with different configurations using the same API.</li>
-								<li class="pb-0">Title for each gallery.</li>
-								<li class="pb-0">Filter by#hashtag.</li>
-								<li class="pb-0">Subtitles.</li>
-								<li class="pb-0">Paginação.</li>
-								<li class="pb-0">Image effects.</li>
-								<li class="pb-0">Link to Instagram post.</li>
-								<li class="pb-0">Available in Portuguese and English.</li>
+								<li class="pb-0">3 types of visualization;</li>
+								<li class="pb-0">Multiple galleries with different settingss using the same API;</li>
+								<li class="pb-0">Title for each gallery;</li>
+								<li class="pb-0">Filter by#hashtag;</li>
+								<li class="pb-0">Subtitles;</li>
+								<li class="pb-0">Paginação;</li>
+								<li class="pb-0">Image effects;</li>
+								<li class="pb-0">Link to Instagram post;</li>
+								<li class="pb-0">Available in portuguese and english.</li>
 							</ul>
 						</section>
-						<section class="section" id="item-about-requirements">
+						<section class="section ps-3" id="item-about-requirements">
 							<h2 class="section-heading">Requirements</h2>
 							<ul>
-								<li class="pb-0">Meta Facebook Developer Account.<a target="_blank" href="https://developers.facebook.com/">Access the Facebook Developer Dashboard.</a></li>
+								<li class="pb-0">Meta Facebook Developer Account. <a target="_blank" href="https://developers.facebook.com/">Facebook Developer Dashboard.</a></li>
 								<li class="pb-0">Business account on Instagram. <a target="_blank" href="https://help.instagram.com/502981923235522/?helpref=uf_share">How to set up a business account on Instagram</a></li>
-								<li class="pb-0">Access and modification permissions in Opencart:
+								<li class="pb-0">Access and modification permissions:
 									<ul>
-										<li class="pb-0">Dashboard > Extensions > Installer.</li>
-										<li class="pb-0">Dashboard > Extensions > Extensions.</li>
-										<li class="pb-0">Panel > Extensions > Modifications.</li>
-										<li class="pb-0">Dashboard > Design > Layout</li>
+										<li class="pb-0"><strong>Extensions</strong> > <strong>Installer</strong>;</li>
+										<li class="pb-0"><strong>Extensions</strong> > <strong>Extensions</strong>;</li>
+										<li class="pb-0"><strong>Extensions</strong> > <strong>Modifications</strong>;</li>
+										<li class="pb-0"><strong>Design</strong> > <strong>Layout</strong>.</li>
 									</ul>
 								</li>
 							</ul>
 						</section>
-						<section class="section" id="item-about-support">
+						<section class="section ps-3" id="item-about-support">
 							<h2 class="section-heading">Support</h2>
 							<p>Access the <a target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr">extension page</a> and click <strong>Get Support</strong>.</p>
 						</section>
@@ -294,28 +306,19 @@
 						</header>
 						<ol>
 							<li class="pb-0">
-								<p>Download the extension at<a target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr">official page</a>and save the file in a known location.</p>
+								<p>Download the extension from the <a target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr">official page</a> and save the file in a known location.</p>
 							</li>
 							<li class="pb-0">
-								<p>From the <strong>Control Panel</strong>, go to <strong>Extensions</strong> > <strong>Instalador</strong> and click <strong>Upload</strong>.<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-download"></i></span></p>
+								<p>Go to <strong>Extensions</strong> > <strong>Installer</strong> and click <strong>Upload</strong> button.</p>
 							</li>
 							<li class="pb-0">
-								<p>Locate the file, select it, and click <strong>Open</strong> or double-click the file name. Wait for the installation to complete. The extension will be listed in the <strong>Installed Extensions</strong> table.
+								<p>Select the previously downloaded file, click <strong>Open</strong> or <strong>double-click</strong> the file name. Wait for the installation to complete.</p>
+							</li>
+							<li class="pb-0">
+								<p>Locate the file in the <strong>Installed Extensions</strong> table and click <strong>Install</strong> button.</p>
 								<div class="col-md-6 col-sm-12">
 									<img class="figure-img img-fluid shadow rounded" src="../assets/images/docs-installation-extension-list.png" alt="" title="Installed Extensions" />
 								</div>
-								</p>
-							</li>
-							<li class="pb-0">
-								<p>Click <strong>Install</strong>.<span class="border rounded ms-1" style="border-color: #3c933c;color: #fff;background-color: #4cb64c;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-plus-circle"></i></span>.</p>
-							</li>
-							<li class="pb-0">
-								<p>Access the module settings in <strong>Extensions</strong> > <strong>Extensions</strong>, select <strong>Modules</strong>, locate the previously created gallery and click <strong>Edit</strong>.
-									</strong><span class="border rounded ms-1" style="border-color: #3c933c;color: #fff;background-color: #4cb64c;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-plus-circle"></i></span></span>
-								<div class="col-md-6 col-sm-12">
-									<img class="figure-img img-fluid shadow rounded" src="../assets/images/docs-installation-module-extensions-list.png" alt="" title="List of installed modules" />
-								</div>
-								</p>
 							</li>
 						</ol>
 					</article>
@@ -327,202 +330,198 @@
 						<ol>
 							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-gallery-types">Types</a></li>
 							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-gallery-create">Creating</a></li>
-							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-gallery-configuration">Configuration</a></li>
+							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-gallery-settings">Settings</a></li>
 							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-gallery-layout">Displaying</a></li>
 						</ol>
 						<section class="section">
-
-							<section class="section" id="item-gallery-types">
-								<h2 class="section-heading">Types</h2>
-								<p>There are two ways to create a gallery:</p>
-								<ol>
-									<li>
-										<strong>Main Gallery</strong>:
-										<p>This gallery will be dedicated to Instagram API configuration. You can create multiple Main Galleries, each with a different API configuration.</p>
-									</li>
-									<li>
-										<strong>Child gallery</strong>:
-										<p>This gallery type will use the API settings of the Parent Gallery. You can create multiple of this type for each Parent Gallery.</p>
-									</li>
-								</ol>
-							</section>
-
-							<section class="section" id="item-gallery-create">
+							<section class="section ps-3" id="item-gallery-create">
 								<h2 class="section-heading">Creating</h2>
-								<p>Click <strong>Extensions</strong> > <strong>Extensions</strong> from the <strong>Dashboard</strong>, select <strong>Modules</strong>, find <strong>Instagram Gallery</strong> and click <strong>Edit</strong>
-									<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-pencil"></i></span>
-									or <strong>New</strong>
-									<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-circle-plus"></i>
+								<p>Go to <strong>Extensions</strong> > <strong>Extensions</strong>, select <strong>Modules</strong>, find <strong>Instagram Gallery</strong> and click <strong>Add New</strong> button.</p>
+							</section>
 
-								</p>
-								<div class="col-md-6 col-sm-12">
-									<img class="figure-img img-fluid shadow rounded" src="../assets/images/docs-installation-module-extensions-list.png" alt="" title="List of installed modules" />
-								</div>
+							<section class="section ps-3" id="item-gallery-settings">
+								<h2 class="section-heading">Settings</h2>
 
-								<h4 class="my-3">Creating main gallery</h4>
-								<p>Enter the name of the new gallery and click <strong>Salvar</strong>.</p>
-								<div class="col-md-6 col-sm-12">
-									<img class="figure-img img-fluid shadow rounded" src="../assets/images/en-us/docs-create-gallery-main-en-us.png" alt="" title="Creating main gallery" />
-								</div>
-
-								<h4 class="my-3">Creating child gallery</h4>
-								<p>Enter the name of the new gallery, select the parent gallery and click the <strong>Save</strong>.</p>
-								<div class="col-md-6 col-sm-12">
-									<img class="figure-img img-fluid shadow rounded" src="../assets/images/en-us/docs-create-gallery-child-en-us.png" alt="" title="Creating child gallery" />
-								</div>
-								<div class="callout-block callout-block-info">
-									<div class="content">
-										<h4 class="callout-title">
-											<span class="callout-icon-holder me-1">
-												<i class="fas fa-info-circle"></i>
-											</span>
-											Note
-										</h4>
-										<p>There must be at least one main gallery with a configured and working API to create child galleries.</p>
+								<div class="ps-4 pt-2">
+									<h4 class="my-3">General</h4>
+									<div class="col-md-6 col-sm-12">
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/en-us/docs-general-tab-en-us.png" alt="" title="General tab" />
 									</div>
-
-								</div>
-							</section>
-
-							<section class="section" id="item-gallery-configuration">
-								<h2 class="section-heading">Configuration</h2>
-								<h4 class="my-3">General configuration</h4>
-								<div class="col-md-6 col-sm-12">
-									<img class="figure-img img-fluid shadow rounded" src="../assets/images/en-us/docs-general-tab-en-us.png" alt="" title="General tab" />
-								</div>
-								<table class="table table-responsive table-bordered table-striped mb-2">
-									<tbody>
+									<table class="table table-responsive table-bordered table-striped mb-2">
 										<thead>
 											<tr>
 												<th scope="col">Parameter</th>
 												<th scope="col" colspan="2">Description</th>
 											</tr>
 										</thead>
-										<tr>
-											<td>Name</td>
-											<td>Gallery name. Can be changed at any time. Duplication is not allowed.</td>
-										</tr>
-										<tr>
-											<td>Title</td>
-											<td>Title to display above the gallery. Supports HTML and CSS.</td>
-										</tr>
-										<tr>
-											<td>Post Types</td>
-											<td>Post types that will provide media for the gallery.</td>
-										</tr>
-										<tr>
-											<td>Album media type</td>
-											<td>Types of media that will be searched within albums.</td>
-										</tr>
-										<tr>
-											<td>Album images</td>
-											<td>Quantity of media to be searched within albums.</td>
-										</tr>
-										<tr>
-											<td>Update</td>
-											<td>Refresh period.</td>
-										</tr>
-										<tr>
-											<td>Hashtag</td>
-											<td>Used to filter posts that will provide media. Only posts that have the hashtag will be processed by the module. Posts without the hashtag will be ignored.</td>
-										</tr>
-										<tr>
-											<td>Status</td>
-											<td>Enables the module.</td>
-										</tr>
-									</tbody>
-								</table>
-
-								<h4 class="my-3">View Settings</h4>
-								<div class="col-md-6 col-sm-12">
-									<img class="figure-img img-fluid shadow rounded" src="../assets/images/en-us/docs-view-tab-en-us.png" alt="" title="View tab" />
+										<tbody>
+											<tr>
+												<td>Name</td>
+												<td>Gallery name displayed in layout configuration.</td>
+											</tr>
+											<tr>
+												<td>Title</td>
+												<td>Title to display above the gallery. Supports HTML and CSS.</td>
+											</tr>
+											<tr>
+												<td>Update</td>
+												<td>Refresh period.</td>
+											</tr>
+											<tr>
+												<td>Status</td>
+												<td>Enable the module.</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
-								<table class="table table-responsive table-bordered table-striped mb-2">
-									<tbody>
+
+								<div class="ps-4 pt-2">
+									<h4 class="my-3">View</h4>
+									<div class="col-md-6 col-sm-12">
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/en-us/docs-view-tab-en-us.png" alt="" title="View tab" />
+									</div>
+	
+									<table class="table table-responsive table-bordered table-striped mb-2">
 										<thead>
 											<tr>
 												<th scope="col">Parameter</th>
 												<th scope="col" colspan="2">Description</th>
 											</tr>
 										</thead>
-										<tr>
-											<td>Media by view</td>
-											<td>Number of images that will be displayed.</td>
-										</tr>
-										<tr>
-											<td>View type</td>
-											<td>Gallery style.</td>
-										</tr>
-										<tr>
-											<td>Pagination</td>
-											<td>Displays pagination marks.</td>
-										</tr>
-										<tr>
-											<td>Zoom effect</td>
-											<td>Choose the zoom effect that will be applied to the image when the user hovers their mouse over it.</td>
-										</tr>
-										<tr>
-											<td>Rounded edges</td>
-											<td>Add rounded edges to images.</td>
-										</tr>
-										<tr>
-											<td>Inclinação</td>
-											<td>Add tilt effect to images.</td>
-										</tr>
-										<tr>
-											<td>Color effect</td>
-											<td>Choose the type of color effect that will be applied to the image when the user hovers over it.</td>
-										</tr>
-										<tr>
-											<td>Caption</td>
-											<td>Display part of the post caption.</td>
-										</tr>
-										<tr>
-											<td>Link to original post</td>
-											<td>Turn each image into a link that points to the corresponding Instagram post.</td>
-										</tr>
-										<tr>
-											<td>Mobile devices</td>
-											<td>Enables gallery display on mobile devices with small screens (smaller than 576px).</td>
-										</tr>
-									</tbody>
-								</table>
-							</section>
+										<tbody>
+											<tr>
+												<td>Images quantity</td>
+												<td>Total number of images in the gallery</td>
+											</tr>
+											<tr>
+												<td>Title</td>
+												<td>Title to display above the gallery. Supports HTML and CSS.</td>
+											</tr>
+											<tr>
+												<td>Post Types</td>
+												<td>Post types that will provide media for the gallery.</td>
+											</tr>
+											<tr>
+												<td>Album media type</td>
+												<td>Types of media that will be searched within albums.</td>
+											</tr>
+											<tr>
+												<td>Album images</td>
+												<td>Quantity of media to be searched within albums.</td>
+											</tr>
+											<tr>
+												<td>Update</td>
+												<td>Refresh period.</td>
+											</tr>
+											<tr>
+												<td>Hashtag</td>
+												<td>Used to filter posts that will provide media. Only posts that have the hashtag will be processed by the module. Posts without the hashtag will be ignored.</td>
+											</tr>
+											<tr>
+												<td>Status</td>
+												<td>Enables the module.</td>
+											</tr>
+											<tr>
+												<td>Media by view</td>
+												<td>Number of images that will be displayed.</td>
+											</tr>
+											<tr>
+												<td>View type</td>
+												<td>Gallery style.</td>
+											</tr>
+											<tr>
+												<td>Pagination</td>
+												<td>Displays pagination marks.</td>
+											</tr>
+											<tr>
+												<td>Zoom effect</td>
+												<td>Choose the zoom effect that will be applied to the image when the user hovers their mouse over it.</td>
+											</tr>
+											<tr>
+												<td>Rounded edges</td>
+												<td>Add rounded edges to images.</td>
+											</tr>
+											<tr>
+												<td>Inclinação</td>
+												<td>Add tilt effect to images.</td>
+											</tr>
+											<tr>
+												<td>Color effect</td>
+												<td>Choose the type of color effect that will be applied to the image when the user hovers over it.</td>
+											</tr>
+											<tr>
+												<td>Caption</td>
+												<td>Display part of the post caption.</td>
+											</tr>
+											<tr>
+												<td>Link to original post</td>
+												<td>Turn each image into a link that points to the corresponding Instagram post.</td>
+											</tr>
+											<tr>
+												<td>Mobile devices</td>
+												<td>Enables gallery display on mobile devices with small screens (smaller than 576px).</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 
-							<section class="section" id="item-gallery-layout">
-								<h2 class="section-heading">Displaying</h2>
-								<ol>
-									<li>
-										<p>Go to <strong>Design</strong> > <strong>Layouts</strong>, choose the layout you want to display the gallery in, and click <strong>Edit</strong>.
-											<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-pencil"></i></span>
-										</p>
-									</li>
-									<li>
-										<p>In the chosen position, click <strong>Add module</strong>.
-											<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-plus-circle"></i></span>
-										</p>
-									</li>
-									<li>
-										<p>Select the gallery and click <strong>Save</strong>.
-											<span class="border rounded ms-1" style="border-color: #1872a2;color: #fff;background-color: #1e91cf;padding: 9px 12px; display: inline-block;"><i class="fa-solid fa-floppy-disk"></i></span>
-										</p>
-									</li>
-								</ol>
+								<div class="ps-4 pt-2">
+									<h4 class="my-3">Integration</h4>
+
+									<p>There are two types of galleries:</p>
+									<ol>
+										<li>
+											<strong>Parent Gallery</strong>:
+											<p>This gallery will be dedicated to API settings. You can create multiple galleries of this type, each with its own API settings.</p>
+										</li>
+										<li>
+											<strong>Child gallery</strong>:
+											<p>This gallery type will use the Parent Gallery's API settings. You can create multiple galleries of this type for each Parent Gallery.</p>
+										</li>
+									</ol>
+
+									<div class="col-md-6 col-sm-12">
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/en-us/docs-integration-tab-en-us.png" alt="" title="Integration tab" />
+									</div>
+	
+									<table class="table table-responsive table-bordered table-striped mb-2">
+										<thead>
+											<tr>
+												<th scope="col">Parameter</th>
+												<th scope="col" colspan="2">Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Parent gallery</td>
+												<td>Select if you are creating a child gallery.</td>
+											</tr>
+											<tr>
+												<td>Token</td>
+												<td>Access token. Used only for parent galleries. <a class="nav-link offcanvas-dismiss" href="#item-api-app-token" style="text-decoration: unset;color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));">How do I get my access token?</a></td>
+											</tr>
+											<tr>
+												<td>Status</td>
+												<td>Informs whether the module is working correctly.</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
 							</section>
-						</section>
 					</article>
 
 					<article class="article px-0 py-4 border-top" id="section-api">
 						<header class="header">
-							<h1 class="heading">API Configuration</h1>
+							<h1 class="heading">API Settings</h1>
 						</header>
 						<ol>
-							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-facebook-account">Facebook/Instagram Account</a></li>
-							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-create-app">Creating application</a></li>
-							<li class="nav-item"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-app-configuration">Configuring the application</a></li>
+							<li class="pb-0"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-facebook-account">Facebook/Instagram Account</a></li>
+							<li class="pb-0"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-create-app">Creating application</a></li>
+							<li class="pb-0"><a class=" normal_linknav-link offcanvas-dismiss" href="#item-api-app-settings">Application Setup</a></li>
 						</ol>
 
-						<section class="section" id="item-api-facebook-account">
+						<section class="section ps-3" id="item-api-facebook-account">
 							<h2 class="my-3">Facebook Developers/Instagram Business Accounts</h2>
 							<div class="callout-block callout-block-success">
 								<div class="content">
@@ -534,18 +533,18 @@
 									</h4>
 									<p class="mb-0">Before you start:</p>
 									<ol>
-										<li>
-											<p>Make sure you already have a <a target="_blank" href="https://developers.facebook.com/">Facebook Developer Account</a> and check that your store is not in maintenance mode.</p>
+										<li class="pb-0">
+											Make sure you already have a <a target="_blank" href="https://developers.facebook.com/">Facebook Developer Account</a> and check that your store is not in maintenance mode.
 										</li>
-										<li>
-											<p>Make sure the Instagram account you are providing the images to is a business account. How to Set Up an <a target="_blank" href="https://help.instagram.com/502981923235522/?helpref=uf_share">Instagram Business Account</a>.</p>
+										<li class="pb-0">
+											Make sure the Instagram account you are providing the images to is a business account. How to Set Up an <a target="_blank" href="https://help.instagram.com/502981923235522/?helpref=uf_share">Instagram Business Account</a>.
 										</li>
 									</ol>
 								</div>
 							</div>
 						</section>
 
-						<section class="section" id="item-api-create-app">
+						<section class="section ps-3" id="item-api-create-app">
 							<h2 class="my-3">Creating application</h2>
 							<ol>
 								<li>
@@ -587,8 +586,8 @@
 							</ol>
 						</section>
 
-						<section class="section" id="item-api-app-configuration">
-							<h2 class="my-3">Configuring the application</h2>
+						<section class="section ps-3" id="item-api-app-settings">
+							<h2 class="my-3">Application Setup</h2>
 							<ol>
 								<li>
 									<p>Go to <strong>Add Product</strong> in the app dashboard. Search for <strong>Instagram</strong> and click <strong>Configure</strong>.</p>
@@ -609,7 +608,7 @@
 									</div>
 								</li>
 								<li>
-									<p>In the browser, log in to the Instagram account you entered in the previous step, go to <strong>More</strong> > <strong>Configuration</strong> > <strong>Site permissions</strong> > <strong>Apps and websites</strong>.
+									<p>In the browser, log in to the Instagram account you entered in the previous step, go to <strong>More</strong> > <strong>Settings</strong> > <strong>Site permissions</strong> > <strong>Apps and websites</strong>.
 										On the <strong>Tester Invitations</strong> tab, click <strong>Accept</strong>.</p>
 									<div class="col-md-6 col-sm-12 mb-3">
 										<img class="figure-img img-fluid shadow rounded" src="../assets/images/en-us/docs-config-app-step-4-en-us.png" alt="" title="Tester invitation" width="300px" />
@@ -618,7 +617,7 @@
 							</ol>
 						</section>
 
-						<section class="section" id="item-api-app-token">
+						<section class="section ps-3" id="item-api-app-token">
 							<h2 class="my-3">Access token</h2>
 							<ol>
 								<li>
@@ -655,7 +654,31 @@
 						</section>
 					</article>
 
-					<article class="article px-0 py-4" id="section-licence">
+					<article class="article px-0 py-4 border-top" id="item-gallery-layout">
+						<header class="header">
+							<h1 class="heading">Displaying</h1>
+							<ol>
+								<li class="pb-0">
+									Go to <strong>Design</strong> > <strong>Layouts</strong>, choose the layout and click <strong>Edit</strong>
+								</li>
+								<li class="pb-0">
+									Choose the position where you want to display the gallery and click <strong>Add module</strong>
+								</li>
+								<li class="pb-0">
+									Select the gallery and click <strong>Save</strong>
+								</li>
+							</ol>
+						</header>
+					</article>
+
+					<article class="article px-0 py-4 border-top" id="section-troubleshooting">
+						<header class="header">
+							<h1 class="heading">Troubleshooting</h1>
+							<p>Check the <a href="troubleshooting.html">Troubleshooting</a> page for common issues and solutions.</p>
+						</header>
+					</article>
+
+					<article class="article px-0 py-4 border-top" id="section-licence">
 						<header class="header">
 							<h1 class="heading">Licence</h1>
 							<p><a href="https://www.gnu.org/" rel="nofollow">GNU General Public License version 3 (GPLv3)</a></p>
@@ -663,7 +686,7 @@
 						</header>
 					</article>
 
-					<article class="article px-0 py-4" id="section-coffee">
+					<article class="article px-0 py-4 border-top" id="section-coffee">
 						<header class="header">
 							<h1 class="heading">Buy me a coffee</h1>
 							<p><a href="https://www.paypal.com/donate/?hosted_button_id=SPQH2B32XBJUW" target="_blank"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Donate with PayPal button" title="PayPal - The safer, easier way to pay online!"></a></p>
@@ -694,6 +717,39 @@
 			$('.aside-offcanvas').offcanvas('hide');
 		});
 	</script>
+    <script>
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const htmlElement = document.documentElement;
+      const savedTheme = localStorage.getItem('bs-theme');
+
+      if (savedTheme) {
+        htmlElement.setAttribute('data-bs-theme', savedTheme);
+		if (savedTheme === 'dark') {
+			darkModeToggle.classList.remove('light-mode');
+			darkModeToggle.classList.add('dark-mode');
+			darkModeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+		} else {
+			darkModeToggle.classList.remove('dark-mode');
+			darkModeToggle.classList.add('light-mode');
+			darkModeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+		}
+      }
+
+      darkModeToggle.addEventListener('click', () => {
+		darkModeToggle.classList.toggle('light-mode');
+		darkModeToggle.classList.toggle('dark-mode');
+
+		if (darkModeToggle.classList.contains('light-mode')) {
+			darkModeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+			htmlElement.setAttribute('data-bs-theme', 'dark');
+			localStorage.setItem('bs-theme', 'dark');
+		} else {
+			darkModeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+			htmlElement.setAttribute('data-bs-theme', 'light');
+			localStorage.setItem('bs-theme', 'light');
+		}
+		});
+    </script>
 	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
