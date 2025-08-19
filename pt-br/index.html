@@ -15,6 +15,7 @@
 
 	<!-- Bootstrap -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+	<link href="https://getbootstrap.com/docs/5.0/assets/css/docs.css" rel="stylesheet" crossorigin="anonymous" />
 
 	<style>
 		:root {
@@ -66,14 +67,27 @@
 		article {
 			scroll-margin-top: calc(var(--header-height) + 12px);
 		}
-
+		
 		.nav>ul>li.nav-item>a.nav-link {
 			padding-left: 40px;
+		}
+
+		.nav>ul>li>a, .offcanvas-dismiss {
+			color: var(--bs-secondary-color)!important;
+			text-wrap: nowrap;
+		}
+
+		.nav>ul>li>a:hover, .offcanvas-dismiss:hover {
+			font-weight: bold;
 		}
 
 		.nav>ul>div>li>a.nav-link,
 		.nav>ul>div>div>li>a.nav-link {
 			padding-left: 40px;
+		}
+		
+		.nav-link {
+			padding: 0 !important;
 		}
 
 		section {
@@ -87,60 +101,8 @@
 			padding-top: 4px;
 			font-size: 1rem;
 			text-align: center;
-			border-radius: 50%;
-			border: 1px solid currentColor;
-		}
-
-		.callout-block {
-			padding: 1rem 1.5rem;
-			border-left: 3px solid #5d6778;
-			background: #f5f5f5;
-			margin: 1rem 0;
-		}
-
-		.callout-block code {
-			background: #fff;
-		}
-
-		.callout-title {
-			font-size: 1rem;
-		}
-
-		.callout-block-info {
-			border-color: #5b99ea;
-			background: #f9fbfe;
-		}
-
-		.callout-block-info .callout-title {
-			color: #1c6fdc;
-		}
-
-		.callout-block-success {
-			border-color: #5cb377;
-			background: #e7f4eb;
-			color: #212529 !important;
-		}
-
-		.callout-block-success .callout-title {
-			color: #3e8554;
-		}
-
-		.callout-block-warning {
-			border-color: #eebf41;
-			background: #fdf6e5;
-		}
-
-		.callout-block-warning .callout-title {
-			color: #d09c13;
-		}
-
-		.callout-block-danger {
-			border-color: #d26d69;
-			background: #fbf3f2;
-		}
-
-		.callout-block-danger .callout-title {
-			color: #b73c37;
+			/* border-radius: 50%; */
+			/* border: 1px solid currentColor; */
 		}
 
 		#download-btn-sm {
@@ -158,6 +120,13 @@
 
 			#download-btn-sm {
 				display: inline-flex;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.img-fluid {
+				max-width: 50% !important;
+				height: auto;
 			}
 		}
 
@@ -193,6 +162,10 @@
 			max-width: 100%;
 			height: auto;
 		}
+
+		img {
+			width: 60% !important;			
+		}
 	</style>
 </head>
 
@@ -208,14 +181,14 @@
 					<a class="navbar-brand ms-3 mt-2" href="#"><strong>Instagram Gallery</strong><br />OpenCart 4.x</a>
 					<div class="d-flex align-items-center gap-2">
 						<button id="darkModeToggle" class="btn btn-outline-secondary px-3" type="button" aria-label="Alternar modo de cor"><i class="fa-solid fa-moon"></i></button>
-						<a class="btn btn-success" id="download-btn-lg" target="_blank" rel="noopener" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button">Baixar</a>
-						<a class="btn btn-success btn-sm" id="download-btn-sm" target="_blank" rel="noopener" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button" aria-label="Baixar extensão"><i class="fa-solid fa-download"></i></a>
+						<a class="btn btn-success" id="download-btn-lg" target="_blank" rel="noopener" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button">Download</a>
+						<a class="btn btn-success btn-lg" id="download-btn-sm" target="_blank" rel="noopener" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button" aria-label="Baixar extensão"><i class="fa-solid fa-download"></i></a>
 					</div>
 				</div>
 			</nav>
 
 			<!-- Barra lateral / Sumário -->
-			<aside class="col-lg-3 col-xl-3 col-xxl-2 sidebar" id="col-aside">
+			<aside class="col-lg-3 col-xl-2 col-xxl-2 sidebar" id="col-aside">
 				<div class="offcanvas-lg offcanvas-start aside-offcanvas" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 					<div class="offcanvas-header">
 						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Conteúdo</h5>
@@ -251,10 +224,9 @@
 								</div>
 
 								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#api-collapse">
-									<a class="nav-link scrollto" href="#section-api"><span class="theme-icon-holder me-2"><i class="fa fa-gear" aria-hidden="true"></i></span>API</a>
+									<a class="nav-link scrollto" href="#section-api"><span class="theme-icon-holder me-2"><i class="fa fa-gear" aria-hidden="true"></i></span>Integração com API</a>
 								</li>
 								<div id="api-collapse" class="collapse">
-									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="#item-api-facebook-account">Conta Facebook/Instagram</a></li>
 									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="#item-api-create-app">Criação do aplicativo</a></li>
 									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="#item-api-app-settings">Configuração do aplicativo</a></li>
 									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="#item-api-app-token">Token de acesso</a></li>
@@ -276,8 +248,8 @@
 			</aside>
 
 			<!-- Conteúdo principal -->
-			<div class="col-lg-9 col-xl-9 col-xxl-10" id="col-main">
-				<main role="main" class="container-lg mt-2">
+			<div class="col-lg-9 col-xl-10 col-xxl-10" id="col-main">
+				<main role="main" class="container mt-2">
 					<!-- Boas-vindas -->
 					<article id="section-welcome" class="welcome-section">
 						<header>
@@ -305,8 +277,7 @@
 							<h2>Visão geral</h2>
 							<p>Eleve a experiência do seu e‑commerce com galerias de imagens alimentadas pelas suas publicações do Instagram. Adicione efeitos visuais e legendas para personalizar o conteúdo. Use hashtags para filtrar a mídia de forma eficiente e crie múltiplas galerias com layouts e configurações exclusivas. As imagens são atualizadas automaticamente para manter seu site atual e envolvente.</p>
 							<figure class="gallery-example">
-								<img src="../assets/images/docs-example.png" alt="Exemplo de galeria do Instagram" loading="lazy" />
-								<figcaption>Exemplo de um layout dinâmico de galeria do Instagram.</figcaption>
+								<img src="../assets/images/docs-example.png" alt="Exemplo de galeria do Instagram" loading="lazy" class="img-fluid" />
 							</figure>
 						</section>
 
@@ -373,8 +344,8 @@
 							</li>
 							<li>
 								Localize a extensão na tabela de <strong>Extensões Instaladas</strong> e clique no botão <strong>Instalar</strong> para ativá-la.
-								<figure class="installation-image">
-									<img src="../assets/images/docs-installation-extension-list.png" alt="Lista de extensões instaladas no OpenCart" loading="lazy" />
+								<figure class="installation-image mt-3">
+									<img src="../assets/images/docs-installation-extension-list.png" alt="Lista de extensões instaladas no OpenCart" loading="lazy" class="img-fluid" />
 									<figcaption>Visualização da tabela de Extensões Instaladas no OpenCart.</figcaption>
 								</figure>
 							</li>
@@ -395,7 +366,7 @@
 						<section id="item-gallery-settings" class="gallery-section px-3">
 							<h2>Configurações</h2>
 
-							<div class="settings-group">
+							<div class="settings-group my-4">
 								<h3>Geral</h3>
 								<figure>
 									<img src="../assets/images/en-us/docs-general-tab-en-us.png" alt="Aba Geral" class="img-fluid shadow rounded" loading="lazy" />
@@ -429,7 +400,7 @@
 								</table>
 							</div>
 
-							<div class="settings-group">
+							<div class="settings-group my-4">
 								<h3>Visualização</h3>
 								<figure>
 									<img src="../assets/images/en-us/docs-view-tab-en-us.png" alt="Aba Visualização" class="img-fluid shadow rounded" loading="lazy" />
@@ -519,13 +490,15 @@
 								</table>
 							</div>
 
-							<div class="settings-group">
+							<div class="settings-group my-4">
 								<h3>Integração</h3>
-								<p>Existem dois tipos de galerias:</p>
-								<ul>
-									<li><strong>Galeria Pai</strong>: usada para as configurações da API. Você pode criar várias galerias pai, cada uma com sua própria configuração.</li>
-									<li><strong>Galeria Filha</strong>: utiliza as configurações de API de uma galeria pai. Várias galerias filhas podem ser vinculadas a uma única galeria pai.</li>
-								</ul>
+								<div class="bd-callout bd-callout-info">
+									Tipos de galerias:
+									<ul>
+										<li><strong>Galeria Pai</strong>: usada para as configurações da API. Você pode criar várias galerias pai, cada uma com sua própria configuração.</li>
+										<li><strong>Galeria Filha</strong>: utiliza as configurações de API de uma galeria pai. Várias galerias filhas podem ser vinculadas a uma única galeria pai.</li>
+									</ul>
+								</div>
 								<figure>
 									<img src="../assets/images/en-us/docs-integration-tab-en-us.png" alt="Aba Integração" class="img-fluid shadow rounded" loading="lazy" />
 									<figcaption>Configuração da aba Integração</figcaption>
@@ -557,7 +530,7 @@
 								</table>
 							</div>
 
-							<div class="settings-group">
+							<div class="settings-group my-4">
 								<h3>Configurações de Exibição</h3>
 								<p>Configure como a galeria é exibida no frontend.</p>
 								<ol>
@@ -590,39 +563,28 @@
 						</section>
 					</article>
 
-					<!-- API (único, sem duplicação) -->
+					<!-- API -->
 					<article class="article px-0 py-4 border-top" id="section-api">
 						<header class="header">
-							<h1 class="heading">Configurações da API</h1>
+							<h1 class="heading">Integração com API do Instagram</h1>
 						</header>
-
-						<nav aria-label="Navegação das Configurações da API">
+						
+						<nav aria-label="Navegação das Integração com API do Instagram">
 							<ol>
-								<li><a class="offcanvas-dismiss" href="#item-api-facebook-account">Conta Facebook/Instagram</a></li>
 								<li><a class="offcanvas-dismiss" href="#item-api-create-app">Criação do aplicativo</a></li>
 								<li><a class="offcanvas-dismiss" href="#item-api-app-settings">Configuração do aplicativo</a></li>
 								<li><a class="offcanvas-dismiss" href="#item-api-app-token">Token de acesso</a></li>
 							</ol>
 						</nav>
-
-						<!-- Facebook / Instagram -->
-						<section class="section ps-3" id="item-api-facebook-account">
-							<h2 class="my-3">Facebook Developers / Contas Comerciais do Instagram</h2>
-							<div class="callout-block callout-block-success">
-								<div class="content">
-									<h3 class="callout-title">
-										<span class="callout-icon-holder me-1"><i class="fas fa-thumbs-up" aria-hidden="true"></i></span>
-										Facebook Developers / Contas Comerciais do Instagram
-									</h3>
-									<p>Antes de começar:</p>
-									<ol>
-										<li>Certifique-se de já ter uma <a target="_blank" rel="noopener" href="https://developers.facebook.com/">Conta de Desenvolvedor do Facebook</a> e de que sua loja não está em modo de manutenção.</li>
-										<li>Verifique se a conta do Instagram é comercial. Veja: <a target="_blank" rel="noopener" href="https://help.instagram.com/502981923235522/?helpref=uf_share">Como configurar uma conta comercial no Instagram</a>.</li>
-									</ol>
-								</div>
-							</div>
-						</section>
-
+						
+						<div class="bd-callout bd-callout-info">
+							Antes de começar:
+							<ul>
+								<li>Certifique-se de possuir uma <a target="_blank" rel="noopener" href="https://developers.facebook.com/">Conta de Desenvolvedor do Facebook</a>.</li>
+								<li>Verifique se a conta do Instagram é comercial. Veja: <a target="_blank" rel="noopener" href="https://help.instagram.com/502981923235522/?helpref=uf_share">Como configurar uma conta comercial no Instagram</a>.</li>
+							</ul>
+						</div>
+						
 						<!-- Criação do Aplicativo -->
 						<section class="section ps-3" id="item-api-create-app">
 							<h2 class="my-3">Criação do aplicativo</h2>
@@ -710,7 +672,7 @@
 								<li>
 									<p>Após o login, clique em <strong>Allow</strong>.</p>
 									<figure>
-										<img class="figure-img img-fluid shadow rounded" src="../assets/images/en-us/docs-config-app-step-9-en-us.png" alt="Tela de autorização com o botão Allow" loading="lazy" />
+										<img class="figure-img img-fluid shadow rounded" src="../assets/images/en-us/docs-config-app-step-9-en-us.png" alt="Tela de autorização com o botão Allow" loading="lazy"/>
 									</figure>
 								</li>
 								<li>
