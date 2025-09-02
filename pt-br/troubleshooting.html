@@ -4,16 +4,13 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<meta name="description" content="Instagram Gallery para OpenCart 4.x - Documentação" />
+	<meta name="description" content="Instagram Gallery for OpenCart 3/4 — Documentation" />
 	<meta name="author" content="Rodrigo Barbosa" />
-	<title>Instagram Gallery para OpenCart 4.x — Documentação</title>
+	<title>Instagram Gallery for OpenCart 3/4 — Documentation</title>
 
-	<!-- Fontes & Ícones -->
 	<link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet" />
 	<!-- <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png" /> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-	<!-- Bootstrap -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 	<link href="https://getbootstrap.com/docs/5.0/assets/css/docs.css" rel="stylesheet" crossorigin="anonymous" />
 	<style>
@@ -114,13 +111,6 @@
 			}
 		}
 
-		@media (min-width: 992px) {
-			.img-fluid {
-				max-width: 50% !important;
-				height: auto;
-			}
-		}
-
 		#div-update-msg {
 			font-weight: bold;
 			height: 25px;
@@ -160,43 +150,47 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<!-- Barra superior -->
+
 			<nav class="navbar navbar-expand-lg fixed-top d-flex flex-column p-0 border-bottom" aria-label="Instagram Gallery para OpenCart 4.x">
 				<div class="container-fluid d-flex justify-content-between align-items-center" style="height: var(--header-height)">
-					<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-						aria-label="Alternar navegação" style="padding: 12px 12px; font-size: 1.2rem; border: 1px solid; border-radius: 0.375rem;">
-						<i class="fa-solid fa-bars" aria-hidden="true"></i>
-					</button>
-					<a class="navbar-brand ms-3 mt-2" href="index.html#"><strong>Instagram Gallery</strong><br />OpenCart 3 e 4</a>
-					<div class="d-flex align-items-center gap-2">
-						<button id="darkModeToggle" class="btn btn-outline-secondary px-3" type="button" aria-label="Alternar para modo claro/escuro"><i class="fa-solid fa-moon"></i>
+					<div class="d-flex align-items-center justify-content-center">
+						<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Alternar navegação" style="padding: 12px 12px; font-size: 1.2rem; border: 1px solid; border-radius: 0.375rem;">
+							<i class="fa-solid fa-bars" aria-hidden="true"></i>
 						</button>
-						<a class="btn btn-success" id="download-btn-lg" target="_blank" rel="noopener" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr"
-							role="button">Download</a>
-						<a class="btn btn-success btn-lg" id="download-btn-sm" target="_blank" rel="noopener" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr"
-							role="button" aria-label="Baixar extensão"><i class="fa-solid fa-download"></i></a>
+						<a class="navbar-brand ms-3" href="index.html#"><strong>Instagram Gallery</strong><br />OpenCart 3 e 4</a>
+					</div>
+					<div class="d-flex align-items-center gap-2" id="navbar-buttons-top">
+						<button class="darkModeToggle btn btn-outline-secondary px-3" type="button" aria-label="Alternar para modo claro/escuro"><i class="fa-solid fa-moon"></i></button>
+						<div class="dropdown">
+							<button class="btn btn-outline-secondary px-3 dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+								<i class="fa-solid fa-language"></i>
+							</button>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+								<li><a class="dropdown-item lang-option" data-lang="pt-br" href="../pt-br/troubleshooting.html">Português</a></li>
+								<li><a class="dropdown-item lang-option" data-lang="en-us" href="../en-us/troubleshooting.html">English</a></li>
+							</ul>
+						</div>
+						<a class="btn btn-success" id="download-btn-lg" target="_blank" rel="noopener" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button">Download</a>
+						<a class="btn btn-success btn-lg" id="download-btn-sm" target="_blank" rel="noopener" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button" aria-label="Baixar extensão"><i class="fa-solid fa-download"></i></a>
 					</div>
 				</div>
 			</nav>
 
-			<!-- Barra lateral / Sumário -->
 			<aside class="col-lg-3 col-xl-2 col-xxl-2 sidebar" id="col-aside">
 				<div class="offcanvas-lg offcanvas-start aside-offcanvas" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 					<div class="offcanvas-header">
 						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Conteúdo</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Fechar"></button>
+						<button type="button" class="btn-close text-reset d-lg-none offcanvas-dismiss" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
 					</div>
 					<div class="offcanvas-body">
-						<nav id="nav" class="nav navbar">
+						<nav id="nav" class="nav navbar d-flex flex-column align-items-start h-100">
 							<ul class="section-items list-unstyled nav flex-column pb-3">
 								<li class="nav-item section-title">
-									<a class="nav-link scrollto offcanvas-dismiss" href="index.html#section-welcome"><span class="theme-icon-holder me-2"><i class="fa fa-home"
-												aria-hidden="true"></i></span>Boas-vindas</a>
+									<a class="nav-link scrollto offcanvas-dismiss" href="index.html#section-welcome"><span class="theme-icon-holder me-2"><i class="fa fa-home" aria-hidden="true"></i></span>Boas-vindas</a>
 								</li>
 
 								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#about-collapse">
-									<a class="nav-link scrollto" href="index.html#section-about"><span class="theme-icon-holder me-2"><i class="fa fa-info"
-												aria-hidden="true"></i></span>Sobre</a>
+									<a class="nav-link scrollto" href="index.html#section-about"><span class="theme-icon-holder me-2"><i class="fa fa-info" aria-hidden="true"></i></span>Sobre</a>
 								</li>
 								<div id="about-collapse" class="collapse">
 									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="index.html#item-about-overview">Visão geral</a></li>
@@ -207,13 +201,11 @@
 								</div>
 
 								<li class="nav-item section-title">
-									<a class="nav-link scrollto offcanvas-dismiss" href="index.html#section-installation"><span class="theme-icon-holder me-2"><i class="fa-solid fa-download"
-												aria-hidden="true"></i></span>Instalação</a>
+									<a class="nav-link scrollto offcanvas-dismiss" href="index.html#section-installation"><span class="theme-icon-holder me-2"><i class="fa-solid fa-download" aria-hidden="true"></i></span>Instalação</a>
 								</li>
 
 								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#settings-collapse">
-									<a class="nav-link scrollto" href="index.html#section-settings"><span class="theme-icon-holder me-2"><i class="fa fa-image"
-												aria-hidden="true"></i></span>Configuração</a>
+									<a class="nav-link scrollto" href="index.html#section-settings"><span class="theme-icon-holder me-2"><i class="fa fa-image" aria-hidden="true"></i></span>Configuração</a>
 								</li>
 								<div id="settings-collapse" class="collapse">
 									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="index.html#item-settings-general">Geral</a></li>
@@ -222,8 +214,7 @@
 								</div>
 
 								<li class="nav-item section-title collapsed" data-bs-toggle="collapse" data-bs-target="#api-collapse">
-									<a class="nav-link scrollto" href="index.html#section-api"><span class="theme-icon-holder me-2"><i class="fa fa-gear"
-												aria-hidden="true"></i></span>Integração com API</a>
+									<a class="nav-link scrollto" href="index.html#section-api"><span class="theme-icon-holder me-2"><i class="fa fa-gear" aria-hidden="true"></i></span>Integração com API</a>
 								</li>
 								<div id="api-collapse" class="collapse">
 									<li class="nav-item ps-3"><a class="nav-link offcanvas-dismiss" href="index.html#item-api-create-app">Criação do aplicativo</a></li>
@@ -232,20 +223,31 @@
 								</div>
 
 								<li class="nav-item section-title">
-									<a class="nav-link scrollto offcanvas-dismiss" href="#"><span class="theme-icon-holder me-2"><i class="fa-solid fa-bug"
-												aria-hidden="true"></i></span>Solução de problemas</a>
+									<a class="nav-link scrollto offcanvas-dismiss" href="troubleshooting.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-bug" aria-hidden="true"></i></span>Solução de problemas</a>
 								</li>
 								<li class="nav-item section-title">
-									<a class="nav-link scrollto offcanvas-dismiss" href="index.html#section-coffee"><span class="theme-icon-holder me-2"><i class="fa-solid fa-mug-hot"
-												aria-hidden="true"></i></span>Pague-me um café</a>
+									<a class="nav-link scrollto offcanvas-dismiss" href="index.html#section-coffee"><span class="theme-icon-holder me-2"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></span>Pague-me um café</a>
 								</li>
 							</ul>
+							<div class="align-items-center gap-2" id="navbar-buttons-aside" style="display: none;">
+								<button class="darkModeToggle btn btn-outline-secondary px-3" type="button" aria-label="Alternar para modo claro/escuro"><i class="fa-solid fa-moon"></i></button>
+								<div class="dropdown">
+									<button class="btn btn-outline-secondary px-3 dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+										<i class="fa-solid fa-language"></i>
+									</button>
+									<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+										<li><a class="dropdown-item lang-option" data-lang="pt-br" href="../pt-br/index.html">Português</a></li>
+										<li><a class="dropdown-item lang-option" data-lang="en-us" href="../en-us/index.html">English</a></li>
+									</ul>
+								</div>
+								<a class="btn btn-success" id="download-btn-lg" target="_blank" rel="noopener" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button">Download</a>
+								<a class="btn btn-success btn-lg" id="download-btn-sm" target="_blank" rel="noopener" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" role="button" aria-label="Baixar extensão"><i class="fa-solid fa-download"></i></a>
+							</div>
 						</nav>
 					</div>
 				</div>
 			</aside>
 
-			<!-- Conteúdo principal -->
 			<div class="col-lg-9 col-xl-10 col-xxl-10 d-flex align-content-between flex-wrap justify-content-center" id="col-main">
 				<main role="main" class="container mt-2">
 					<article id="section-troubleshooting" class="troubleshooting-section mt-3">
@@ -291,37 +293,38 @@
 			</div>
 		</div>
 	</div>
-	<!-- Scripts -->
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Offcanvas: close when clicking links with .offcanvas-dismiss
-            document.addEventListener('click', function (e) {
-                const link = e.target.closest('.offcanvas-dismiss');
-                if (!link) return;
-                const ocEl = document.getElementById('offcanvasNavbar');
-                if (!ocEl) return;
-                if (window.bootstrap && bootstrap.Offcanvas) {
-                    const oc = bootstrap.Offcanvas.getOrCreateInstance(ocEl);
-                    oc.hide();
-                }
-            });
 
-            // Toggle dark/light mode respecting localStorage
-            const toggle = document.getElementById('darkModeToggle');
-            if (!toggle) return;
-            const html = document.documentElement;
-            const saved = localStorage.getItem('bs-theme');
-            const setMode = (mode) => {
-                html.setAttribute('data-bs-theme', mode);
-                localStorage.setItem('bs-theme', mode);
-                toggle.innerHTML = mode === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-                toggle.setAttribute('aria-label', mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-            };
-            setMode(saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
-            toggle.addEventListener('click', () => setMode(html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark'));
-        });
-    </script>
+	<script>
+		document.addEventListener('click', function (e) {
+			const link = e.target.closest('.offcanvas-dismiss');
+			if (!link) return;
+			const ocEl = document.getElementById('offcanvasNavbar');
+			if (!ocEl) return;
+			if (window.bootstrap && bootstrap.Offcanvas) {
+				const oc = bootstrap.Offcanvas.getOrCreateInstance(ocEl);
+				oc.hide();
+			}
+		});
+
+		(function () {
+			const toggle = document.getElementsByClassName('darkModeToggle');
+			if (!toggle) return;
+
+			Array.from(toggle).forEach(btn => {
+				const html = document.documentElement;
+				const saved = localStorage.getItem('bs-theme');
+				const setMode = (mode) => {
+					html.setAttribute('data-bs-theme', mode);
+					localStorage.setItem('bs-theme', mode);
+					btn.innerHTML = mode === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+					btn.setAttribute('aria-label', mode === 'dark' ? 'Alternar para modo claro' : 'Alternar para modo escuro');
+				};
+				setMode(saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+				btn.addEventListener('click', () => setMode(html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark'));
+			});
+		})();
+	</script>
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
