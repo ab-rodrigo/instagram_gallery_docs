@@ -21,7 +21,7 @@ Keep your store dynamic and automatically updated. This module features an intel
 ---
 
 ## Documentation and Installation
-### [👉 Click here to access the Tutorial](https://ab-rodrigo.github.io/instagram-gallery-docs/)
+### [👉 Click here to access the Tutorial](https://ab-rodrigo.github.io/instagram_gallery_docs/)
 
 > **What you will find in the guide:**
 > * How to perform the installation and initial configuration.

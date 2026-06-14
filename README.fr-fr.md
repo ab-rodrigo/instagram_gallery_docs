@@ -21,7 +21,7 @@ Gardez votre boutique dynamique et automatiquement mise à jour. Ce module dispo
 ---
 
 ## Documentation et Installation
-### [👉 Cliquez ici pour accéder au Tutoriel](https://ab-rodrigo.github.io/instagram-gallery-docs/)
+### [👉 Cliquez ici pour accéder au Tutoriel](https://ab-rodrigo.github.io/instagram_gallery_docs/)
 
 > **Ce que vous trouverez dans le guide :**
 > * Comment effectuer l'installation et la configuration initiale.
