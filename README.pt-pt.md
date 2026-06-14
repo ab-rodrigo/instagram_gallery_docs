@@ -34,7 +34,7 @@ Mantenha a sua loja dinâmica e atualizada automaticamente. Este módulo conta c
 
 Pode descarregar ou adquirir a extensão diretamente no OpenCart Marketplace:
 
-👉 https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=48247
+👉 https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=44768
 
 ---
 

@@ -34,7 +34,7 @@ Mantieni il tuo negozio dinamico e aggiornato automaticamente. Questo modulo è 
 
 Puoi scaricare o acquistare l'estensione direttamente sull'OpenCart Marketplace:
 
-👉 https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=48247
+👉 https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=44768
 
 ---
 
